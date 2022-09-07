@@ -1,0 +1,166 @@
+@import 'settings/colors';
+@import 'settings/fonts';
+@mixin borderStyle($color){
+  border-width: 0.75px;
+  border-style: solid;
+  border-color: $color;
+}
+.homeHeader{
+  height: 100vh;
+  display: flex;
+  .homeHeader__background{
+    @media (max-width: 1200px){
+      display: none;
+    }
+  }
+  .homeHeader__background, .homeHeader__info{
+    width: 50%;
+  }
+  .homeHeader__background{
+    background: url('../assets/Home-Hero-Image.jpg') right;
+    background-size: cover;
+  }
+  .homeHeader__info{
+    @media (max-width: 800px){
+
+    }
+    @media (max-width: 1200px){
+      width: 100%;
+      background: url('../assets/Home-Hero-Image.jpg') right no-repeat;
+      background-size: cover;
+    }
+    @media (min-width: 1200px) and (max-width: 1400px){
+      margin-right: 10px;
+    }
+    @media (min-width: 1400px) {
+      margin-right: 8.875rem;
+    }
+  }
+  .homeHeader__logIn{
+    margin: 2.3125rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .homeHeader__logIn--signIn, .homeHeader__logIn--signUp{
+      padding: 0.5625rem 0.625rem;
+      font-size: 0.8125rem;
+      color: $color-text-grey;
+      text-decoration: none;
+      @media(max-width: 800px){
+        margin-right: 20px;
+      }
+    }
+    .homeHeader__logIn--signUp{
+      @include borderStyle($color-yellow);
+    }
+  }
+  .homeHeader__nav{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    .hamburger {
+      margin-right: 20px;
+      display: block;
+      text-align: right;
+      appearance: none;
+      width: 40px;
+      height: 40px;
+      mask: url('../assets/hamburger.svg') no-repeat center;
+      background-color: $color-text-grey;
+      &:checked{
+        ~ .homeHeader__nav--ul{
+          visibility: visible;
+        }
+      }
+      @media (min-width: 800px) {
+        display: none;
+      }
+    }
+    .homeHeader__nav--ul{
+      display: flex;
+      justify-content: flex-end;
+      @media(max-width: 800px){
+        position: absolute;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 0.5625rem 0;
+        font-size: 1.125rem;
+        color: $color-text-black;
+        list-style-type: none;
+        visibility: hidden;
+      }
+      @media(min-width: 800px){
+        visibility: visible;
+      }
+      li{
+        text-align: center;
+        padding: 0.5625rem 1.25rem;
+        font-size: 1.125rem;
+        color: $color-text-black;
+        list-style-type: none;
+        &:first-of-type{
+          @media (max-width: 800px){
+            border: none;
+          }
+          @include borderStyle($color-text-grey);
+        }
+        &:last-of-type{
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  .homeHeader__main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70vh;
+    h2 {
+      @media (max-width: 1200px){
+        //@include borderStyle($color-text-grey);
+        background: white;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      text-align: center;
+      font-size: 2.375rem;
+      color: $color-text-black;
+      line-height: 3.4375rem;
+      padding: 0;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: -0.76px;
+    }
+    .homeHeader__main-section--decoration{
+      width: 253px;
+      height: 33px;
+      background: url('../assets/Decoration.svg');
+    }
+    .homeHeader__main-section--buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .button {
+        text-decoration:none;
+        text-align: center;
+        color: $color-text-grey;
+        margin: 5px;
+        width: 310px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include borderStyle($color-text-grey);
+        border-radius: 0;
+        background: white;
+        font-size: 2.25rem;
+        font-weight: 300;
+        font-family: $font-base;
+      }
+    }
+  }
+}
