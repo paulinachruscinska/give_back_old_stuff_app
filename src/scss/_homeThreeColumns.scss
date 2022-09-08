@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   @media (min-width: 800px){
-    padding: 0 142px;
+    padding: 46px 142px;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 46px 0 86px;
+    //margin: 46px 0 86px;
     .homeThreeColumns__box--text-number{
       font-size: 5.625rem;
       margin: 0 0 10px;
