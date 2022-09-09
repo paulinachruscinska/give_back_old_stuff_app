@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {HashLink} from "react-router-hash-link";
 
 export default function HomeHeader(){
     return (
@@ -14,7 +15,7 @@ export default function HomeHeader(){
                     <input type='checkbox' className='hamburger'/>
                     <ul className='homeHeader__nav--ul'>
                         <li>Start</li>
-                        <li>O co chodzi?</li>
+                        <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
                         <li>O nas</li>
                         <li>Fundacja i organizacja</li>
                         <li>Kontakt</li>
@@ -23,7 +24,7 @@ export default function HomeHeader(){
                 <section className='homeHeader__main-section'>
                     <h2>Zacznij pomagać! <br/>
                     Oddaj niechciane rzeczy w zaufane ręce</h2>
-                    <div className='homeHeader__main-section--decoration'></div>
+                    <div className='decoration'></div>
                     <div className='homeHeader__main-section--buttons'>
                         <Link to='/logowanie' className='button'><span>ODDAJ RZECZY</span></Link>
                         <Link to='/logowanie' className='button'><span>ZORGANIZUJ ZBIÓRKĘ</span></Link>
