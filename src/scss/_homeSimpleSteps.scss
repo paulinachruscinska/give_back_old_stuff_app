@@ -1,0 +1,85 @@
+@import 'settings/colors';
+@import "settings/fonts";
+@import "homeHeader";
+.homeSimpleSteps{
+
+  .homeSimpleSteps__text{
+    padding: 1.875rem 0;
+    .homeSimpleSteps__text--head{
+      text-align: center;
+      font-size: 2.375rem;
+      margin: 1.5625rem 0;
+    }
+    .decoration{
+      margin: 0 auto;
+      width: 253px;
+      height: 33px;
+      background: url('../assets/Decoration.svg');
+    }
+  }
+  .homeSimpleSteps__instruction{
+    padding: 4.75rem 0;
+    background: $color-background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 800px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+        box-sizing: border-box;
+        padding: 4.75rem 8.875rem;
+    }
+    .homeSimpleSteps__instruction--box{
+      width: 165px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      @media (min-width: 800px){
+        padding-bottom: 0;
+      }
+      .instruction-text{
+        text-align: center;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        margin: 0;
+      }
+      .line{
+        width: 70px;
+        height: 1px;
+        background: $color-text-grey;
+        margin: 0.65rem 0;
+      }
+      .instruction-text2{
+        text-align: center;
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+  .homeSimpleSteps__button {
+    margin: 35px 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button {
+      text-decoration: none;
+      text-align: center;
+      color: $color-text-grey;
+      margin: 5px;
+      width: 310px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $color-text-darkgreen;
+      border-radius: 0;
+      background: white;
+      font-size: 2.25rem;
+      font-weight: 300;
+      font-family: $font-base;
+    }
+  }
+}
