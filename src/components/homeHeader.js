@@ -16,7 +16,7 @@ export default function HomeHeader(){
                     <ul className='homeHeader__nav--ul'>
                         <li>Start</li>
                         <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
-                        <li>O nas</li>
+                        <li><HashLink to='/#homeAboutUs'>O nas</HashLink></li>
                         <li>Fundacja i organizacja</li>
                         <li>Kontakt</li>
                     </ul>
