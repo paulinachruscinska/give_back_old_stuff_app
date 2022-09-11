@@ -1,0 +1,70 @@
+@import "settings/colors";
+.homeAboutUs{
+  background-color: $color-background;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+  .homeAboutUs__text, .homeAboutUs__background{
+    width:100%;
+    min-height: 300px;
+    @media (min-width: 800px) {
+      width: 50%;
+
+    }
+  }
+  .homeAboutUs__text {
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (min-width: 800px) {
+      padding: 70px 100px;
+
+
+    }
+  }
+  .homeAboutUs__text--primary{
+    font-size: 1.375rem;
+    text-align: center;
+    line-height: 2.4375rem;
+    @media (min-width: 800px){
+      font-size: 2.375rem;
+      line-height: 3.4375rem;
+
+    }
+  }
+  .decoration{
+    margin: 0 auto;
+    width: 253px;
+    height: 33px;
+    background: url('../assets/Decoration.svg');
+  }
+  .homeAboutUs__text--additional {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2rem;
+    @media (min-width: 800px) {
+      font-size: 1.875rem;
+      line-height: 3.375rem;
+      letter-spacing: -0.6px;
+
+    }
+  }
+  .signature{
+    width: 100px;
+    align-self: flex-end;
+    @media (min-width: 800px){
+      width: 200px;
+    }
+  }
+  .homeAboutUs__background{
+    background: url("../assets/People.jpg") center no-repeat;
+    background-size: cover;
+  }
+}

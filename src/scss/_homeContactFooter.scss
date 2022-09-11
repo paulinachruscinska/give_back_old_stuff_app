@@ -1,0 +1,103 @@
+.homeContactFooter{
+  background: url('../assets/Background-Contact-Form.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0.7;
+  }
+}
+.homeContact{
+  display: flex;
+  justify-content: flex-end;
+
+  .contact{
+    max-width: 528px;
+    margin: 200px 142px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .homeContact__text{
+      font-size: 2.375rem;
+      line-height: 3.4375rem;
+      letter-spacing: -0.76px;
+      text-align: center;
+    }
+    .decoration{
+      width: 253px;
+      height: 33px;
+      background: url('../assets/Decoration.svg');
+    }
+    .homeContact__form{
+      position: relative;
+      .homeContact__form--inputText{
+        display: flex;
+        gap:1rem;
+        input{
+          appearance: none;
+          border: none;
+          border-bottom: 2px solid $color-text-black;
+          background: url('../assets/Background-Contact-Form.jpg') no-repeat right;
+          background-size: 1200%;
+          opacity: 0.3;
+          font-size: 1.125rem;
+        }
+      }
+      .form__text{
+        font-size: 1rem;
+        //line-height: 5.3125rem;
+        font-weight: 600;
+
+      }
+      textarea{
+        width: 100%;
+        min-height: 130px;
+        overflow: hidden;
+        appearance: none;
+        border: none;
+        border-bottom: 2px solid $color-text-black;
+        background: url('../assets/Background-Contact-Form.jpg') no-repeat right;
+        background-size: 1200%;
+        opacity: 0.3;
+        font-size: 1.125rem;
+      }
+      .wyslij{
+        appearance: none;
+        width: 150px;
+        height: 50px;
+        background: url('../assets/Background-Contact-Form.jpg') no-repeat right;
+        background-size: 1200%;
+        opacity: 0.6;
+        font-size: 1.125rem;
+        border: 1px solid $color-text-black;
+        position: absolute;
+        bottom: -75px;
+        right: 0;
+      }
+    }
+  }
+}
+.homeFooter{
+  position: relative;
+  z-index: 1;
+  padding:22px 120px;
+  display: flex;
+  justify-content: flex-end;
+  .homeFooter__text{
+    position: absolute;
+    top:22px;
+    left:50%;
+    transform: translateX(-50%);
+  }
+  > img{
+    padding-left: 20px;
+  }
+}
