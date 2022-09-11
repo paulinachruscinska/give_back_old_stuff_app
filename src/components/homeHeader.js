@@ -18,7 +18,7 @@ export default function HomeHeader(){
                         <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
                         <li><HashLink to='/#homeAboutUs'>O nas</HashLink></li>
                         <li>Fundacja i organizacja</li>
-                        <li>Kontakt</li>
+                        <li><HashLink to='/#homeContactFooter'>Kontakt</HashLink></li>
                     </ul>
                 </nav>
                 <section className='homeHeader__main-section'>

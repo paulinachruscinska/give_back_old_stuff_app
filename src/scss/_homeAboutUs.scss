@@ -29,38 +29,38 @@
 
     }
   }
-    .homeAboutUs__text--primary{
-      font-size: 1.375rem;
-      text-align: center;
-      line-height: 2.4375rem;
-      @media (min-width: 800px){
+  .homeAboutUs__text--primary{
+    font-size: 1.375rem;
+    text-align: center;
+    line-height: 2.4375rem;
+    @media (min-width: 800px){
       font-size: 2.375rem;
       line-height: 3.4375rem;
 
-      }
     }
-    .decoration{
-      margin: 0 auto;
-      width: 253px;
-      height: 33px;
-      background: url('../assets/Decoration.svg');
-    }
-    .homeAboutUs__text--additional {
-      text-align: center;
-      font-size: 1rem;
-      line-height: 2rem;
-      @media (min-width: 800px) {
-        font-size: 1.875rem;
-        line-height: 3.375rem;
-        letter-spacing: -0.6px;
+  }
+  .decoration{
+    margin: 0 auto;
+    width: 253px;
+    height: 33px;
+    background: url('../assets/Decoration.svg');
+  }
+  .homeAboutUs__text--additional {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2rem;
+    @media (min-width: 800px) {
+      font-size: 1.875rem;
+      line-height: 3.375rem;
+      letter-spacing: -0.6px;
 
-      }
     }
-    .signature{
-      width: 100px;
-      align-self: flex-end;
-      @media (min-width: 800px){
-        width: 200px;
+  }
+  .signature{
+    width: 100px;
+    align-self: flex-end;
+    @media (min-width: 800px){
+      width: 200px;   
     }
   }
   .homeAboutUs__background{
