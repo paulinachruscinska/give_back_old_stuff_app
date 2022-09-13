@@ -1,3 +1,5 @@
+//import {useState} from "react";
+
 const carousel = [
     {
         id:1,
@@ -75,6 +77,10 @@ const carousel = [
 ]
 
 export default function HomeWhoWeHelp(){
+    //const [active, setActive] = useState(null)
+    const handleClickButton1=()=>{
+
+    }
     return (
         <section className='homeWhoWeHelp'>
             <p className='homeWhoWeHelp__head'>Komu pomagamy?</p>
@@ -109,7 +115,7 @@ export default function HomeWhoWeHelp(){
                 })}
             </section>
             <section className='buttons'>
-                <button className='carousel--button'>1</button>
+                <button className='carousel--button' onClick={handleClickButton1}>1</button>
                 <button className='carousel--button'>2</button>
                 <button className='carousel--button'>3</button>
             </section>

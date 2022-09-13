@@ -108,3 +108,16 @@
     }
   }
 }
+.homeWhoWeHelp__carousel{
+  position: relative;
+  height: 700px;
+  .carousel--box{
+    height: 700px;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+}
+.carousel--box2, .carousel--box3{
+  visibility: hidden;
+}
