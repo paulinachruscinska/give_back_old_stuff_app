@@ -82,7 +82,7 @@ export default function HomeWhoWeHelp(){
             <section className='homeWhoWeHelp__carousel'>
                 {carousel.map(item =>{
                     return(
-                    <div key={item.id} className='carousel--box'>
+                    <div key={item.id} className={'carousel--box carousel--box' + item.id}>
                         <section className='carousel--whowehelp'>
                             <p>{item.fundacje}</p>
                             <p>{item.organizacje}</p>
