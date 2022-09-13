@@ -1,3 +1,5 @@
+@import 'settings/colors';
+@import 'settings/fonts';
 .homeWhoWeHelp{
   margin:80px 0;
   .homeWhoWeHelp__head{
@@ -74,5 +76,35 @@
     border:1px solid $color-text-grey;
     background-color: white;
 
+  }
+}
+.carousel--box1{
+  .carousel--whowehelp {
+    > p {
+      &:first-of-type{
+      padding: 23px 42px;
+      border: 1px solid black;
+      }
+    }
+  }
+}
+.carousel--box2{
+  .carousel--whowehelp {
+    > p {
+      &:nth-of-type(2){
+        padding: 23px 42px;
+        border: 1px solid black;
+      }
+    }
+  }
+}
+.carousel--box3{
+  .carousel--whowehelp {
+    > p {
+      &:nth-of-type(3){
+        padding: 23px 42px;
+        border: 1px solid black;
+      }
+    }
   }
 }
