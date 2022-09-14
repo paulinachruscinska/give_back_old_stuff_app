@@ -1,10 +1,22 @@
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import React from "react";
+import {useForm} from "react-hook-form";
 
 export default function Register(){
+    const {register, handleSubmit, formState: {errors} } = useForm({
+            defaultValues:{
+                email:'',
+                password:'',
+                password1:'',
+            }
+        }
+    );
+    const onSubmit = newUser =>{
+        console.log(newUser);
+    }
     return (
-        <>
+        <section className='register__logIn'>
             <header className='homeHeader_log'>
                 <section className='homeHeader__info'>
                     <section className='homeHeader__logIn'>
@@ -24,9 +36,32 @@ export default function Register(){
                 </section>
             </header>
             <section className='logIn'>
-                <p className='logIn__text'>Zarejestruj się</p>
+                <p className='logIn__text'>Załóż konto</p>
                 <div className='decoration'></div>
             </section>
-        </>
+            <form className='form-logIn' onSubmit={handleSubmit(onSubmit)}>
+                <div className='form-table'>
+                    <label>
+                        <p className='form__logIn--text'>Email</p>
+                        <input type='email' className='input-logIn' {...register('email', { required: 'Podany email jest nieprawidłowy!'})} />
+                        <p className='error'>{errors.email?.message}</p>
+                    </label>
+                    <label>
+                        <p className='form__logIn--text'>Hasło</p>
+                        <input type='password' className='input-logIn' {...register('password', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
+                        <p className='error'>{errors.password?.message}</p>
+                    </label>
+                    <label>
+                        <p className='form__logIn--text'>Powtórz hasło</p>
+                        <input type='password' className='input-logIn' {...register('password1', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
+                        <p className='error'>{errors.password?.message}</p>
+                    </label>
+                </div>
+                <div className='form-button'>
+                    <Link to='/logowanie' className='button-logIn'>Zaloguj się</Link>
+                    <input className='submit-button' id='submit-button' type='submit' value="Załóż konto"/>
+                </div>
+            </form>
+        </section>
     )
 }
