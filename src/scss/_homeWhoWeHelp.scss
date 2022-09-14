@@ -17,7 +17,12 @@
 }
 .homeWhoWeHelp__carousel{
   .carousel--box{
+    @media(max-width: 1200px){
+      margin: 0;
+      width: 100%;
+    }
     margin: 0 278px;
+    width: calc(100% - 278px * 2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,10 +30,15 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      gap: 100px;
+      gap:20px;
+      flex-wrap: wrap;
+      @media (min-width: 800px){
+        padding: 0;
+        gap: 100px;
+      }
       >p{
         font-size: 1.5rem;
-        line-height: 5.3125rem;
+        //line-height: 5.3125rem;
       }
     }
     .carousel--describe{
@@ -45,8 +55,13 @@
         border-bottom: 1px solid $color-text-grey;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         padding: 30px 13px;
+        @media (min-width: 800px){
+          flex-direction: row;
+          align-items: center;
+        }
         .text1{
           font-size: 1.625rem;
           font-family: $font-alt;
@@ -66,18 +81,7 @@
     }
   }
 }
-.buttons{
-  display: flex;
-  justify-content: center;
-  .carousel--button{
-    appearance: none;
-    font-size: 1.125rem;
-    padding: 10px 24px;
-    border:1px solid $color-text-grey;
-    background-color: white;
 
-  }
-}
 .carousel--box1{
   .carousel--whowehelp {
     > p {
@@ -108,16 +112,29 @@
     }
   }
 }
-.homeWhoWeHelp__carousel{
-  position: relative;
-  height: 700px;
-  .carousel--box{
-    height: 700px;
-    position: absolute;
-    top:0;
-    left:0;
+.paginationbuttons{
+  margin: 0 auto;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.125rem;
+  width: 155px;
+
+  a{
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
-.carousel--box2, .carousel--box3{
-  visibility: hidden;
+.previousbutton, .nextbutton {
+  display: none;
 }
+.paginationActive{
+  padding: 15px;
+  border: 1px solid black;
+}
+.paginationDisabled {
+    background-color: red;
+  }
+
