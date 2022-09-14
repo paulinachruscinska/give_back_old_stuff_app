@@ -8,7 +8,7 @@ export default function Register(){
             defaultValues:{
                 email:'',
                 password:'',
-                password1:'',
+                password1: '',
             }
         }
     );
@@ -48,13 +48,13 @@ export default function Register(){
                     </label>
                     <label>
                         <p className='form__logIn--text'>Hasło</p>
-                        <input type='password' className='input-logIn' {...register('password', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
+                        <input name='password' type='password' className='input-logIn' {...register('password', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
                         <p className='error'>{errors.password?.message}</p>
                     </label>
                     <label>
                         <p className='form__logIn--text'>Powtórz hasło</p>
                         <input type='password' className='input-logIn' {...register('password1', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
-                        <p className='error'>{errors.password?.message}</p>
+                        <p className='error'>{errors.password1?.message}</p>
                     </label>
                 </div>
                 <div className='form-button'>
