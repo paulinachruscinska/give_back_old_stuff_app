@@ -1,4 +1,6 @@
 //import {useState} from "react";
+import React, {useState} from "react";
+import ReactPaginate from 'react-paginate';
 
 const carousel = [
     {
@@ -77,47 +79,57 @@ const carousel = [
 ]
 
 export default function HomeWhoWeHelp(){
-    //const [active, setActive] = useState(null)
-    const handleClickButton1=()=>{
+    const [pageNumber, setPageNumber] = useState(0);
+    const carouselBoxPerPage = 1;
+    const pagesVisited = pageNumber * carouselBoxPerPage;
 
+    const displayCarouselBox = carousel.slice(pagesVisited, pagesVisited + carouselBoxPerPage).map(item => {
+        return(
+            <div key={item.id} className={'carousel--box carousel--box' + item.id}>
+                <section className='carousel--whowehelp'>
+                    <p>{item.fundacje}</p>
+                    <p>{item.organizacje}</p>
+                    <p>{item.lokal}</p>
+                </section>
+                <section className='carousel--describe'>
+                    <p>{item.describe}</p>
+                </section>
+                <section className='carousel--table'>
+                    {item.examples.map((smallItem, index) =>{
+                        return(
+                            <div key={index} className='carousel--table-item'>
+                                <div className='table-firstColumn'>
+                                    <p className='text1'>{smallItem.text1}</p>
+                                    <p className='text2'>{smallItem.text2}</p>
+                                </div>
+                                <p className='text3'>{smallItem.text3}</p>
+                            </div>
+                        )
+                    })}
+                </section>
+            </div>
+        )
+    })
+    const changePage = ({selected}) =>{
+        setPageNumber(selected)
     }
     return (
-        <section className='homeWhoWeHelp'>
+        <section className='homeWhoWeHelp' id='homeWhoWeHelp'>
             <p className='homeWhoWeHelp__head'>Komu pomagamy?</p>
             <div className='decoration'/>
             <section className='homeWhoWeHelp__carousel'>
-                {carousel.map(item =>{
-                    return(
-                    <div key={item.id} className={'carousel--box carousel--box' + item.id}>
-                        <section className='carousel--whowehelp'>
-                            <p>{item.fundacje}</p>
-                            <p>{item.organizacje}</p>
-                            <p>{item.lokal}</p>
-                        </section>
-                        <section className='carousel--describe'>
-                            <p>{item.describe}</p>
-                        </section>
-                        <section className='carousel--table'>
-                            {item.examples.map((smallItem, index) =>{
-                                return(
-                                    <div key={index} className='carousel--table-item'>
-                                        <div className='table-firstColumn'>
-                                            <p className='text1'>{smallItem.text1}</p>
-                                            <p className='text2'>{smallItem.text2}</p>
-                                        </div>
-                                        <p className='text3'>{smallItem.text3}</p>
-                                    </div>
-                                )
-                            })}
-                        </section>
-                    </div>
-                    )
-                })}
-            </section>
-            <section className='buttons'>
-                <button className='carousel--button' onClick={handleClickButton1}>1</button>
-                <button className='carousel--button'>2</button>
-                <button className='carousel--button'>3</button>
+                {displayCarouselBox}
+                <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}
+                    pageCount={carousel.length / carouselBoxPerPage}
+                    onPageChange={changePage}
+                    containerClassName={'paginationbuttons'}
+                    previousLinkClassName={'previousbutton'}
+                    nextLinkClassName={'nextbutton'}
+                    disabledClassName={'paginationDisabled'}
+                    activeClassName={'paginationActive'}
+                />
             </section>
         </section>
     )
