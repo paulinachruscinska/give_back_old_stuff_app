@@ -4,20 +4,30 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import {useState} from "react";
+import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {auth} from '../firebase-config';
+
 
 export default function Register(){
+    const [registerEmail, setRegisterEmail]= useState('');
+    const [registerPassword, setRegisterPassword]= useState('');
     const {register, handleSubmit, watch, formState: {errors} } = useForm({
             defaultValues:{
                 email:'',
                 password:'',
-                password1: '',
+                confirmPassword: '',
             },
             mode: 'onTouched'
         }
     );
-    const onSubmit = newUser =>{
-        console.log(newUser);
-    }
+    const onSubmit = async () => {
+        try {
+            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+            console.log(user)
+        } catch(error){
+            console.log(error.message);
+        }
+        }
     const [passwordEye, setPasswordEye] = useState(false);
 
     const handlePasswordClick = () => {
@@ -57,7 +67,11 @@ export default function Register(){
                 <div className='form-table'>
                     <label>
                         <p className='form__logIn--text'>Email</p>
-                        <input type='email' className='input-logIn' {...register('email', { required: 'Podany email jest nieprawidłowy!'})} />
+                        <input type='email'
+                               className='input-logIn'
+                               name='email'
+                               onChange={(event)=>{setRegisterEmail(event.target.value)}}
+                               {...register('email', { required: 'Podany email jest nieprawidłowy!'})} />
                         <p className='error'>{errors.email?.message}</p>
                     </label>
                     <div className='password-eye-div'>
@@ -65,6 +79,8 @@ export default function Register(){
                         <p className='form__logIn--text'>Hasło</p>
                         <input type={passwordEye === false ? "password" : "text"}
                                className='input-logIn'
+                               name='password'
+                               onChange={(event)=>{setRegisterPassword(event.target.value)}}
                                {...register('password', { required: 'To pole jest obowiązkowe',
                             minLength:{
                                 value:6,
@@ -85,6 +101,7 @@ export default function Register(){
                         <p className='form__logIn--text'>Powtórz hasło</p>
                         <input type={confirmPasswordEye === false ? "password" : "text"}
                                className='input-logIn'
+                               name='confirmPassword'
                                onPaste={(e)=>{
                                    e.preventDefault()
                                    return false;
