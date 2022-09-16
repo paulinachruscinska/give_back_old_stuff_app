@@ -1,0 +1,31 @@
+.giveBackHeader__background{
+  background: url('../assets/Form-Hero-Image.jpg') no-repeat right;
+  background-size: cover;
+  width: 50%;
+}
+.giveBackHeader__steps{
+  display: flex;
+  justify-content: space-around;
+  .giveBackHeader__step{
+    text-align: center;
+    width: 88px;
+    position: relative;
+    margin:0 60px;
+    &:before{
+      content:'';
+      position: absolute;
+      left:0;
+      top:0;
+      width:190px;
+      height: 190px;
+      border: 1px solid $color-text-grey;
+      transform: rotate(45deg) translate(2%, 38%);
+    }
+    .step-number{
+      font-size: 2rem;
+    }
+    .step-text{
+      font-size: 1.375rem;
+    }
+  }
+}
