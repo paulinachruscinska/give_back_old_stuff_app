@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function HomeContactFooter(){
     return (
         <section className='homeContactFooter' id='homeContactFooter'>
