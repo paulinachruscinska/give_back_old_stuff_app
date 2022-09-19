@@ -20,9 +20,10 @@ export default function Register(){
             mode: 'onTouched'
         }
     );
-    const onSubmit = async () => {
+    const onSubmit = async (data) => {
+        console.log(registerEmail, registerPassword, data);
         try {
-            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+            const user = await createUserWithEmailAndPassword(auth, data.email, data.password)
             console.log(user)
         } catch(error){
             console.log(error.message);
