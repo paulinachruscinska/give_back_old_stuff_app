@@ -22,7 +22,7 @@ const columnText = [
 export default function HomeThreeColumns(){
     return (
         <section className="homeThreeColumns">
-            {columnText.map(function (item){
+            {columnText.map(item => {
                 return(
                 <div key = {item.id} className='homeThreeColumns__box'>
                     <p className='homeThreeColumns__box--text-number'>{item.number}</p>

@@ -36,7 +36,7 @@ export default function HomeSimpleSteps(){
                 <div className='decoration'></div>
             </div>
             <div className='homeSimpleSteps__instruction'>
-                {instruction.map(item=>{
+                {instruction.map(item => {
                     return(
                         <div key={item.id} className='homeSimpleSteps__instruction--box'>
                            <img className='instruction-image' src={item.image} alt='instruction'/>

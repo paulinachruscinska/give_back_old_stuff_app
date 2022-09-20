@@ -5,7 +5,7 @@ import {HashLink} from "react-router-hash-link";
 export default function HomeHeader(){
     return (
         <header className='homeHeader'>
-            <section className='homeHeader__background'></section>
+            <section className='homeHeader__background' />
             <section className='homeHeader__info'>
                 <section className='homeHeader__logIn'>
                     <Link to='/logowanie' className='homeHeader__logIn--signIn'>Zaloguj</Link>
