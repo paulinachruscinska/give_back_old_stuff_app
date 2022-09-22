@@ -1,12 +1,10 @@
-import {Link} from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
-import React from "react";
-import {useForm} from "react-hook-form";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { useForm } from "react-hook-form";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import {useState} from "react";
-import {createUserWithEmailAndPassword} from 'firebase/auth'
-import {auth} from '../firebase-config';
-
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../firebase-config';
 
 export default function Register(){
     const [registerEmail, setRegisterEmail]= useState('');
@@ -24,11 +22,12 @@ export default function Register(){
         console.log(registerEmail, registerPassword, data);
         try {
             const user = await createUserWithEmailAndPassword(auth, data.email, data.password)
-            console.log(user)
+            console.log(user);
+            return <Link to='/' className='submit-button'/>
         } catch(error){
             console.log(error.message);
         }
-        }
+    };
     const [passwordEye, setPasswordEye] = useState(false);
 
     const handlePasswordClick = () => {
@@ -68,17 +67,20 @@ export default function Register(){
                 <div className='form-table'>
                     <label>
                         <p className='form__logIn--text'>Email</p>
-                        <input type='email'
-                               className='input-logIn'
-                               name='email'
-                               onChange={(event)=>{setRegisterEmail(event.target.value)}}
-                               {...register('email', { required: 'Podany email jest nieprawidłowy!'})} />
+                        <input
+                            type='email'
+                            className='input-logIn'
+                            name='email'
+                            onChange={(event)=>{setRegisterEmail(event.target.value)}}
+                            {...register('email', { required: 'Podany email jest nieprawidłowy!'})}
+                        />
                         <p className='error'>{errors.email?.message}</p>
                     </label>
                     <div className='password-eye-div'>
                     <label>
                         <p className='form__logIn--text'>Hasło</p>
-                        <input type={passwordEye === false ? "password" : "text"}
+                        <input
+                            type={passwordEye === false ? "password" : "text"}
                                className='input-logIn'
                                name='password'
                                onChange={(event)=>{setRegisterPassword(event.target.value)}}
@@ -107,24 +109,27 @@ export default function Register(){
                                    e.preventDefault()
                                    return false;
                                }}
-                               {...register("confirmPassword", { required: 'confirm password is required',
+                               {...register("confirmPassword", { required: 'To pole jest obowiązkowe',
                                    validate: (value) =>
                                        value === password || "Hasła muszą być jednakowe",
                                })}/>
                         <p className='error'>{errors.confirmPassword?.message}</p>
                     </label>
                         <div className='password-eye'>
-                            {confirmPasswordEye === false ? (
-                                <AiFillEyeInvisible onClick={handleConfirmPasswordClick} />
-                            ) : (
-                                <AiFillEye onClick={handleConfirmPasswordClick} />
-                            )}
+                            {confirmPasswordEye === false
+                                ? (<AiFillEyeInvisible onClick={handleConfirmPasswordClick} />)
+                                : (<AiFillEye onClick={handleConfirmPasswordClick} />)
+                            }
                         </div>
                     </div>
                 </div>
                 <div className='form-button'>
                     <Link to='/logowanie' className='button-logIn'>Zaloguj się</Link>
-                    <input className='submit-button' id='submit-button' type='submit' value="Załóż konto"/>
+                    <input
+                        className='submit-button'
+                        id='submit-button'
+                        type='submit'
+                        value="Załóż konto"/>
                 </div>
             </form>
         </section>
