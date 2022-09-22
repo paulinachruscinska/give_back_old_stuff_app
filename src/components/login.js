@@ -2,8 +2,14 @@ import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import React from "react";
 import {useForm} from "react-hook-form";
+import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai";
+import {useState} from "react";
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../firebase-config';
 
 export default function Login(){
+    const [loginEmail, setLoginEmail] = useState('');
+    const [loginPassword, setLoginPassword] = useState('');
     const {register, handleSubmit, formState: {errors} } = useForm({
         defaultValues:{
             email:'',
@@ -11,11 +17,20 @@ export default function Login(){
         }
     }
     );
-    const onSubmit = User =>{
-        console.log(User);
+    const onSubmit = async (data) =>{
+        console.log(loginEmail, loginPassword, data);
+        try {
+            const user = await signInWithEmailAndPassword(auth, data.email, data.password)
+            console.log(user)
+        } catch(error){
+            console.log(error.message);
+        }
     }
+    const [passwordEye, setPasswordEye] = useState(false);
 
-
+    const handlePasswordClick = () => {
+        setPasswordEye(!passwordEye);
+    };
     return (
         <>
             <header className='homeHeader_log'>
@@ -44,14 +59,31 @@ export default function Login(){
                 <div className='form-table'>
                     <label>
                         <p className='form__logIn--text'>Email</p>
-                        <input type='email' className='input-logIn' {...register('email', { required: 'Podany email jest nieprawidłowy!'})} />
+                        <input
+                            type='email'
+                            className='input-logIn'
+                            onChange={(event)=>setLoginEmail(event.target.value)}
+                            {...register('email', { required: 'Podany email jest nieprawidłowy!'})} />
                         <p className='error'>{errors.email?.message}</p>
                     </label>
-                    <label>
-                        <p className='form__logIn--text'>Hasło</p>
-                        <input type='password' className='input-logIn' {...register('password', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
-                        <p className='error'>{errors.password?.message}</p>
-                    </label>
+                    <div className='password-eye-div'>
+                        <label>
+                            <p className='form__logIn--text'>Hasło</p>
+                            <input
+                                type='password'
+                                className='input-logIn'
+                                onChange={(event)=>setLoginPassword(event.target.value)}
+                                {...register('password', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
+                            <p className='error'>{errors.password?.message}</p>
+                        </label>
+                        <div className="password-eye">
+                            {passwordEye === false ? (
+                                <AiFillEyeInvisible onClick={handlePasswordClick} />
+                            ) : (
+                                <AiFillEye onClick={handlePasswordClick} />
+                            )}
+                        </div>
+                    </div>
                 </div>
                 <div className='form-button'>
                     <Link to='/rejestracja' className='button-logIn'>Załóż konto</Link>
