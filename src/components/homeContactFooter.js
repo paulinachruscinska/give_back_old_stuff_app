@@ -1,22 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form";
 
+
 export default function HomeContactFooter(){
-    const [name, setName]= useState('');
-    const [email, setEmail]= useState('');
-    const [text, setText]= useState('');
+    // const [name, setName]= useState('');
+    // const [email, setEmail]= useState('');
+    // const [message, setMessage]= useState('');
     const {register, handleSubmit, formState: {errors} } = useForm({
+            mode: 'onTouched',
             defaultValues:{
                 name:'',
                 email:'',
-                text: '',
-            },
-            mode: 'onTouched'
-        }
+                message:''
+    }}
     );
-    const onSubmit = (event)=>{
-        event.preventDefault();
-        console.log(name, email, text);
+     const onSubmit = (data) =>{
+         console.log(data)
+
+        const requestOptions = {
+            method: 'post',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        }
+        fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', requestOptions)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                alert("Formularz został wysłany")
+            })
     }
 
     return (
@@ -26,8 +37,10 @@ export default function HomeContactFooter(){
                     <p className='homeContact__text'>Skontaktuj się z nami</p>
                     <div className='decoration'></div>
                     <form
+                        method='post'
+                        action='#'
                         className='homeContact__form'
-                        onSubmit={handleSubmit(onSubmit)}
+                        onSubmit={handleSubmit((data) => onSubmit(data))}
                     >
                         <div className='homeContact__form--inputText'>
                             <label>
@@ -35,7 +48,6 @@ export default function HomeContactFooter(){
                                 <input
                                     type='text'
                                     placeholder='Krzysztof'
-                                    onChange={ (event)=> {setName(event.target.value)}}
                                     {...register('name', {
                                         required: 'To pole jest obowiązkowe!',
                                         pattern:{
@@ -50,7 +62,7 @@ export default function HomeContactFooter(){
                                 <input type='email'
                                        className='input-logIn'
                                        name='email'
-                                       onChange={(event)=>{setEmail(event.target.value)}}
+                                       placeholder='krzysztof@gmail.com'
                                        {...register('email', {
                                             required: 'Podany email jest nieprawidłowy!',
                                             pattern: {
@@ -66,15 +78,14 @@ export default function HomeContactFooter(){
                                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
                                  ut aliquip ex ea commodo consequat.'
-                                onChange={ event=> setText(event.target.value) }
-                                {...register('text', {
+                                {...register('message', {
                                     required: 'To pole jest obowiązkowe',
                                     minLength:{
                                         value:120,
                                         message: 'Wiadomość musi mieć conajmniej 120 znaków'
                                     }})}
                             />
-                            <p className='error'>{errors.text?.message}</p>
+                            <p className='error'>{errors.message?.message}</p>
                         </label>
                         <input
                             className='wyslij'
