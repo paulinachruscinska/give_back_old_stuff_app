@@ -1,0 +1,76 @@
+.giveBackSelect__box {
+  height: 100vh;
+  .giveBackImportantInformation {
+    background-color: $color-yellow;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 50px 0;
+    height: 179px;
+    @media(min-width: 800px) {
+      text-align: left;
+      padding: 50px 140px;
+    }
+
+    .giveBackImportantInformation__header {
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .giveBackImportantInformation__additional {
+      font-size: 1.375rem;
+      color: $color-text-grey;
+      margin: 0;
+    }
+  }
+  .giveBackSteps{
+    background: url("../assets/Background-Form.jpg") no-repeat right;
+    background-size: cover;
+    padding: 0 142px;
+    height: calc(100vh - 179px);
+    position: relative;
+    .giveBackSteps__step{
+      margin: 0;
+      font-size: 1.5rem;
+      color: $color-text-grey;
+      padding-bottom: 4.375rem;
+      padding-top: 36px;
+    }
+    .giveBackSteps__head{
+      margin: 0;
+      font-size: 2.25rem;
+      font-weight: 600;
+    }
+    .giveBackSteps__form{
+      .giveBackSteps__form__item{
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        gap:30px;
+      }
+      .checkbox__form{
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        border: 0.75px solid $color-text-grey;
+        &:checked{
+          background: $color-yellow;
+        }
+      }
+      .adres__text{
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+    .dalej{
+      border: 0.75px solid $color-text-grey;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 300;
+      padding: 23px 63px;
+      font-family: $font-base;
+      position: absolute;
+      bottom: 50px;
+    }
+  }
+}
