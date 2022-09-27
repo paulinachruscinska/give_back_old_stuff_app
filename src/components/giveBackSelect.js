@@ -8,13 +8,28 @@ export default function GiveBackSelect(){
                 </section>
                 <section className='giveBackSteps'>
                     <p className='giveBackSteps__step'>Krok 1/4</p>
-                    <p className='giveBackSteps__head'>Zaznacz co chcesz oddać</p>
+                    <p className='giveBackSteps__head'>Zaznacz co chcesz oddać:</p>
                     <form className='giveBackSteps__form'>
-                        <checkbox>ubrania, które nadają się do ponownego użycia</checkbox>
-                        <checkbox>ubrania, do wyrzucenia</checkbox>
-                        <checkbox>zabawki</checkbox>
-                        <checkbox>książki</checkbox>
-                        <checkbox>Inne</checkbox>
+                        <div className='giveBackSteps__form__item'>
+                            <input className='checkbox__form' type='checkbox' id='checkbox1' value='checkbox1'/>
+                            <label className='adres__text' htmlFor='checkbox1'>ubrania, które nadają się do ponownego użycia</label>
+                        </div>
+                        <div className='giveBackSteps__form__item'>
+                            <input className='checkbox__form' type='checkbox' id='checkbox2' value='checkbox2'/>
+                            <label className='adres__text' htmlFor='checkbox2'>ubrania, do wyrzucenia</label>
+                        </div>
+                        <div className='giveBackSteps__form__item'>
+                            <input className='checkbox__form' type='checkbox' id='checkbox3' value='checkbox3'/>
+                            <label className='adres__text' htmlFor='checkbox3'>zabawki </label>
+                        </div>
+                        <div className='giveBackSteps__form__item'>
+                            <input className='checkbox__form' type='checkbox' id='checkbox4' value='checkbox4'/>
+                            <label className='adres__text' htmlFor='checkbox4'>książki</label>
+                        </div>
+                        <div className='giveBackSteps__form__item'>
+                            <input className='checkbox__form' type='checkbox' id='checkbox5' value='checkbox5'/>
+                            <label className='adres__text' htmlFor='checkbox5'>Inne</label>
+                        </div>
                     </form>
                     <button className='dalej'>Dalej</button>
                 </section>
@@ -28,13 +43,13 @@ export default function GiveBackSelect(){
                     <p className='giveBackSteps__step'>Krok 2/4</p>
                     <p className='giveBackSteps__head'>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</p>
                     <form className='giveBackSteps__form'>
-                        <p>Liczba 60l worków:</p>
+                        <p className='adres__text'>Liczba 60l worków:</p>
                         <ul className='giveBackSteps__ul'>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
+                            <li className='adres__text'>1</li>
+                            <li className='adres__text'>2</li>
+                            <li className='adres__text'>3</li>
+                            <li className='adres__text'>4</li>
+                            <li className='adres__text'>5</li>
                         </ul>
                     </form>
                     <button className='dalej'>Dalej</button>
@@ -51,18 +66,18 @@ export default function GiveBackSelect(){
                     <p className='giveBackSteps__head'>Lokalizacja:</p>
                     <form className='giveBackSteps__form'>
                         <ul className='giveBackSteps__ul'>
-                            <li>Poznań</li>
-                            <li>Warszawa</li>
-                            <li>Kraków</li>
-                            <li>Wrocław</li>
-                            <li>Katowice</li>
+                            <li className='adres__text'>Poznań</li>
+                            <li className='adres__text'>Warszawa</li>
+                            <li className='adres__text'>Kraków</li>
+                            <li className='adres__text'>Wrocław</li>
+                            <li className='adres__text'>Katowice</li>
                         </ul>
                         <p className='giveBackSteps__form__text'>Komu chcesz pomóc?</p>
-                        <button className='giveBackSteps__form__button'>dzieciom</button>
-                        <button className='giveBackSteps__form__button'>samotnym matkom</button>
-                        <button className='giveBackSteps__form__button'>bezdomnym</button>
-                        <button className='giveBackSteps__form__button'>niepełnosprawnym</button>
-                        <button className='giveBackSteps__form__button'>osobom starszym</button>
+                        <button className='giveBackSteps__form__button adres__text'>dzieciom</button>
+                        <button className='giveBackSteps__form__button adres__text'>samotnym matkom</button>
+                        <button className='giveBackSteps__form__button adres__text'>bezdomnym</button>
+                        <button className='giveBackSteps__form__button adres__text'>niepełnosprawnym</button>
+                        <button className='giveBackSteps__form__button adres__text'>osobom starszym</button>
                         <p className='giveBackSteps__form__text'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
                         <input type='text'/>
                     </form>
