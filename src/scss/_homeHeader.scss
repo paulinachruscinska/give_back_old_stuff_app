@@ -36,24 +36,6 @@
       margin-right: 8.875rem;
     }
   }
-  .homeHeader__logIn{
-    margin: 2.3125rem 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    .homeHeader__logIn--signIn, .homeHeader__logIn--signUp{
-      padding: 0.5625rem 0.625rem;
-      font-size: 0.8125rem;
-      color: $color-text-grey;
-      text-decoration: none;
-      @media(max-width: 800px){
-        margin-right: 20px;
-      }
-    }
-    .homeHeader__logIn--signUp{
-      @include borderStyle($color-yellow);
-    }
-  }
   .homeHeader__nav{
     position: relative;
     display: flex;
@@ -167,4 +149,25 @@
 a{
   text-decoration: none;
   color:$color-text-grey;
+}
+.homeHeader__logIn{
+  margin: 2.3125rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @media (max-width: 1400px){
+    margin:2.3125rem 0;
+  }
+  .homeHeader__logIn--signIn, .homeHeader__logIn--signUp{
+    padding: 0.5625rem 0.625rem;
+    font-size: 0.8125rem;
+    color: $color-text-grey;
+    text-decoration: none;
+    @media(max-width: 800px){
+      margin-right: 20px;
+    }
+  }
+  .homeHeader__logIn--signUp{
+    @include borderStyle($color-yellow);
+  }
 }
