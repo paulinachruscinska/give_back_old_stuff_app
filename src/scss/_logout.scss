@@ -1,0 +1,21 @@
+.logOut{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logOut__text{
+    font-size: 2.5rem;
+    letter-spacing: -0.8px;
+    line-height: 55px;
+    text-align: center;
+    margin: 123px auto 31px;
+  }
+  a{
+    width:150px;
+    text-align: center;
+    margin: 40px auto;
+    font-size: 1.125rem;
+    padding: 13px 18px;
+    border: 0.75px solid $color-text-grey;
+  }
+}
+

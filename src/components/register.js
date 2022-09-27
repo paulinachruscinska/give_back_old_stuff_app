@@ -50,7 +50,7 @@ export default function Register(){
                     <nav className='homeHeader__nav'>
                         <input type='checkbox' className='hamburger'/>
                         <ul className='homeHeader__nav--ul'>
-                            <li>Start</li>
+                            <li><HashLink to='/'>Start</HashLink></li>
                             <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
                             <li><HashLink to='/#homeAboutUs'>O nas</HashLink></li>
                             <li><HashLink to='/#homeWhoWeHelp'>Fundacja i organizacja</HashLink></li>
@@ -129,7 +129,8 @@ export default function Register(){
                         className='submit-button'
                         id='submit-button'
                         type='submit'
-                        value="Załóż konto"/>
+                        value="Załóż konto">
+                    </input>
                 </div>
             </form>
         </section>

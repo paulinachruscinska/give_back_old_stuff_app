@@ -1,20 +1,18 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
+import HomeLogIn from "./homeLogIn";
 
 export default function HomeHeader(){
     return (
         <header className='homeHeader'>
             <section className='homeHeader__background'></section>
             <section className='homeHeader__info'>
-                <section className='homeHeader__logIn'>
-                    <Link to='/logowanie' className='homeHeader__logIn--signIn'>Zaloguj</Link>
-                    <Link to='/rejestracja' className='homeHeader__logIn--signUp'>Załóż konto</Link>
-                </section>
+                <HomeLogIn/>
                 <nav className='homeHeader__nav'>
                     <input type='checkbox' className='hamburger'/>
                     <ul className='homeHeader__nav--ul'>
-                        <li>Start</li>
+                        <li><HashLink to='/'>Start</HashLink></li>
                         <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
                         <li><HashLink to='/#homeAboutUs'>O nas</HashLink></li>
                         <li><HashLink to='/#homeWhoWeHelp'>Fundacja i organizacja</HashLink></li>
