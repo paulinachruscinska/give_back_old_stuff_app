@@ -92,7 +92,7 @@
         }
       }
     }
-    .dalej1{
+    .wstecz{
         border: 0.75px solid $color-text-grey;
         font-size: 24px;
         line-height: 32px;
@@ -114,15 +114,39 @@
       left:400px;
     }
   }
-
+.select--city{
+  display: inline-block;
+  position: relative;
+}
+.adres__text--select{
+  display: inline-block;
+  width: 300px;
+  margin:20px 0;
+  padding: 8px 18px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  border: 0.75px solid $color-text-grey;
+  position: relative;
+  &:after {
+    content: '';
+    width: 57px;
+    height: 26px;
+    background-image: url("../assets/Arrow Down.png");
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 .giveBackSteps__ul{
   display: inline-block;
   border: 0.75px solid $color-text-grey;
   list-style-type: none;
   padding: 6px 36px;
   position: absolute;
-  right:26px;
-  top: 50px;
+  right:0;
+  top: 70px;
+  background: url("../assets/Background-Form.jpg") left;
   li{
     &:hover{
       cursor: pointer;
@@ -134,9 +158,77 @@
   display: flex;
   justify-content: flex-start;
 }
+.giveBackSteps__form__text{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin:20px 0;
+}
+.buttons{
+  display: flex;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+.giveBackSteps__form__button{
+  margin-right: 1.5rem;
+  margin-bottom: 20px;
+  padding: 11px 26px;
+  border: 0.75px solid $color-text-grey;
+  font-family: $font-base;
+}
+.organizacja__input{
+  width:500px;
+  padding: 11px 26px;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.giveBackSteps__form--adres{
+  display: flex;
+  gap:160px;
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    .adres__text{
+      max-width: 115px;
+    }
+    textarea{
+      width: 256px;
+      height: 120px;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+}
+.adres__input{
+  width: 256px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.adres{
+  display: flex;
+  gap:160px;
+  .adres__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+    .adres__text{
+      width: 150px;
+    }
+  }
+}
+
 .active{
   visibility: visible;
 }
 .hidden {
   visibility: hidden;
+}
+.clicked{
+  background: $color-yellow;
+}
+.unclicked {
+  background: transparent;
 }

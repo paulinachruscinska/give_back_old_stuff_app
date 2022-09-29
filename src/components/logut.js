@@ -6,9 +6,10 @@ import {Link} from "react-router-dom";
 export default function LogOut(){
 return(
     <>
-        <HomeLogIn/>
+
         <header className='homeHeader_log'>
             <section className='homeHeader__info'>
+                <HomeLogIn/>
                 <nav className='homeHeader__nav'>
                     <input type='checkbox' className='hamburger'/>
                     <ul className='homeHeader__nav--ul'>
