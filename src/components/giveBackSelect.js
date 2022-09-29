@@ -1,4 +1,12 @@
 export default function GiveBackSelect(){
+    const buttonClick=(event)=>{
+        if(event.target){
+            event.target.style.backgroundColor = '#FAD648';
+        } else if (event.target.style.backgroundColor === '#FAD648'){
+            event.target.style.backgroundColor = 'white';
+        }
+    }
+
     return(
         <section className='giveBackSelect-carousel'>
             <section className='giveBackSelect__box'>
@@ -31,7 +39,7 @@ export default function GiveBackSelect(){
                             <label className='adres__text' htmlFor='checkbox5'>Inne</label>
                         </div>
                     </form>
-                    <button className='dalej'>Dalej</button>
+                    <button className='dalej1'>Dalej</button>
                 </section>
             </section>
             <section className='giveBackSelect__box'>
@@ -52,8 +60,8 @@ export default function GiveBackSelect(){
                             <li className='adres__text'>5</li>
                         </ul>
                     </form>
+                    <button className='dalej1'>Wstecz</button>
                     <button className='dalej'>Dalej</button>
-                    <button className='dalej'>Wstecz</button>
                 </section>
             </section>
             <section className='giveBackSelect__box'>
@@ -73,16 +81,18 @@ export default function GiveBackSelect(){
                             <li className='adres__text'>Katowice</li>
                         </ul>
                         <p className='giveBackSteps__form__text'>Komu chcesz pomóc?</p>
-                        <button className='giveBackSteps__form__button adres__text'>dzieciom</button>
-                        <button className='giveBackSteps__form__button adres__text'>samotnym matkom</button>
-                        <button className='giveBackSteps__form__button adres__text'>bezdomnym</button>
-                        <button className='giveBackSteps__form__button adres__text'>niepełnosprawnym</button>
-                        <button className='giveBackSteps__form__button adres__text'>osobom starszym</button>
+                        <div className='buttons' onClick={buttonClick}>
+                            <button className='giveBackSteps__form__button adres__text'>dzieciom</button>
+                            <button className='giveBackSteps__form__button adres__text'>samotnym matkom</button>
+                            <button className='giveBackSteps__form__button adres__text'>bezdomnym</button>
+                            <button className='giveBackSteps__form__button adres__text'>niepełnosprawnym</button>
+                            <button className='giveBackSteps__form__button adres__text'>osobom starszym</button>
+                        </div>
                         <p className='giveBackSteps__form__text'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
                         <input type='text'/>
                     </form>
+                    <button className='dalej1'>Wstecz</button>
                     <button className='dalej'>Dalej</button>
-                    <button className='dalej'>Wstecz</button>
                 </section>
             </section>
             <section className='giveBackSelect__box'>
@@ -129,8 +139,8 @@ export default function GiveBackSelect(){
                             </label>
                         </div>
                     </form>
+                    <button className='dalej1'>Wstecz</button>
                     <button className='dalej'>Dalej</button>
-                    <button className='dalej'>Wstecz</button>
                 </section>
             </section>
             <section className='giveBackSelect__box'>
