@@ -92,6 +92,16 @@
         }
       }
     }
+    .dalej1{
+        border: 0.75px solid $color-text-grey;
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 300;
+        padding: 23px 63px;
+        font-family: $font-base;
+        position: absolute;
+        bottom: 50px;
+    }
     .dalej{
       border: 0.75px solid $color-text-grey;
       font-size: 24px;
@@ -101,6 +111,7 @@
       font-family: $font-base;
       position: absolute;
       bottom: 50px;
+      left:400px;
     }
   }
 
