@@ -41,25 +41,55 @@
       font-size: 2.25rem;
       font-weight: 600;
     }
-    .giveBackSteps__form{
-      .giveBackSteps__form__item{
+
+      .giveBackSteps__form__item {
         padding-top: 40px;
         display: flex;
         align-items: center;
-        gap:30px;
+        gap: 30px;
       }
-      .checkbox__form{
+
+      .checkbox__form {
         appearance: none;
         width: 40px;
         height: 40px;
         border: 0.75px solid $color-text-grey;
-        &:checked{
+
+        &:checked {
           background: $color-yellow;
         }
       }
-      .adres__text{
+
+      .adres__text {
         font-size: 1.5rem;
         font-weight: 300;
+      }
+
+      .select {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .adres__text--select {
+          display: inline-block;
+          width: 300px;
+          margin: 0 26px;
+          padding: 8px 18px;
+          font-size: 1.5rem;
+          font-weight: 300;
+          border: 0.75px solid $color-text-grey;
+          position: relative;
+
+          &:after {
+            content: '';
+            width: 57px;
+            height: 26px;
+            background-image: url("../assets/Arrow Down.png");
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
       }
     }
     .dalej{
@@ -73,4 +103,29 @@
       bottom: 50px;
     }
   }
+
+.giveBackSteps__ul{
+  display: inline-block;
+  border: 0.75px solid $color-text-grey;
+  list-style-type: none;
+  padding: 6px 36px;
+  position: absolute;
+  right:26px;
+  top: 50px;
+  li{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+.giveBackSteps__form2 {
+  padding-top: 60px;
+  display: flex;
+  justify-content: flex-start;
+}
+.active{
+  visibility: visible;
+}
+.hidden {
+  visibility: hidden;
 }

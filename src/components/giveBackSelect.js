@@ -1,4 +1,12 @@
+import {useState} from "react";
+
 export default function GiveBackSelect(){
+    const[visibility, setVisibility] = useState('hidden');
+    const [liSelect, setLiSelect] = useState('-wybierz-');
+    const [citySelect, setCitySelect] = useState('-wybierz-')
+    const selectClick=()=> visibility === 'hidden' ? setVisibility('active') : setVisibility('hidden');
+    const selectUlClick=(event)=>setLiSelect(event.target.textContent);
+
     return(
         <section className='giveBackSelect-carousel'>
             <section className='giveBackSelect__box'>
@@ -42,15 +50,18 @@ export default function GiveBackSelect(){
                 <section className='giveBackSteps'>
                     <p className='giveBackSteps__step'>Krok 2/4</p>
                     <p className='giveBackSteps__head'>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</p>
-                    <form className='giveBackSteps__form'>
-                        <p className='adres__text'>Liczba 60l worków:</p>
-                        <ul className='giveBackSteps__ul'>
-                            <li className='adres__text'>1</li>
-                            <li className='adres__text'>2</li>
-                            <li className='adres__text'>3</li>
-                            <li className='adres__text'>4</li>
-                            <li className='adres__text'>5</li>
-                        </ul>
+                    <form className='giveBackSteps__form2'>
+                        <span className='adres__text'>Liczba 60l worków:</span>
+                        <div className='select'>
+                            <span onClick={selectClick} className='adres__text--select'>{liSelect}</span>
+                            <ul onClick={selectUlClick} className={'giveBackSteps__ul ' + visibility}>
+                                <li className='adres__text'>1</li>
+                                <li className='adres__text'>2</li>
+                                <li className='adres__text'>3</li>
+                                <li className='adres__text'>4</li>
+                                <li className='adres__text'>5</li>
+                            </ul>
+                        </div>
                     </form>
                     <button className='dalej'>Dalej</button>
                     <button className='dalej'>Wstecz</button>
@@ -65,13 +76,16 @@ export default function GiveBackSelect(){
                     <p className='giveBackSteps__step'>Krok 3/4</p>
                     <p className='giveBackSteps__head'>Lokalizacja:</p>
                     <form className='giveBackSteps__form'>
-                        <ul className='giveBackSteps__ul'>
-                            <li className='adres__text'>Poznań</li>
-                            <li className='adres__text'>Warszawa</li>
-                            <li className='adres__text'>Kraków</li>
-                            <li className='adres__text'>Wrocław</li>
-                            <li className='adres__text'>Katowice</li>
-                        </ul>
+                        <div className='select'>
+                            <span onClick={selectClick} className='adres__text--select'>{citySelect}</span>
+                            <ul className={'giveBackSteps__ul' + visibility}>
+                                <li className='adres__text'>Poznań</li>
+                                <li className='adres__text'>Warszawa</li>
+                                <li className='adres__text'>Kraków</li>
+                                <li className='adres__text'>Wrocław</li>
+                                <li className='adres__text'>Katowice</li>
+                            </ul>
+                        </div>
                         <p className='giveBackSteps__form__text'>Komu chcesz pomóc?</p>
                         <button className='giveBackSteps__form__button adres__text'>dzieciom</button>
                         <button className='giveBackSteps__form__button adres__text'>samotnym matkom</button>

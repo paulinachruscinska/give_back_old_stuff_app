@@ -1,18 +1,21 @@
-import {Link} from "react-router-dom";
-import React, {useState} from "react";
-import {onAuthStateChanged,signOut} from 'firebase/auth';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { onAuthStateChanged,signOut } from 'firebase/auth';
 import { auth } from '../firebase-config';
 
 export default function HomeLogIn(){
     const [user, setUser] = useState({});
     console.log(user);
-    onAuthStateChanged(auth, (currentUser) =>{
-        setUser(currentUser)
-    })
+
     const logout = async () => {
         await signOut(auth)
     }
-    const logIn =()=>{
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) =>{
+            setUser(currentUser)
+        })
+    }, []);
+    const logIn = () => {
         if (user === null ){
             return(
                 <section className='homeHeader__logIn'>
@@ -30,6 +33,6 @@ export default function HomeLogIn(){
             )
         }
     }
-return logIn()
 
+    return logIn();
 }

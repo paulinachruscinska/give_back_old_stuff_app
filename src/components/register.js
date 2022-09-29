@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useForm } from "react-hook-form";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase-config';
 
 export default function Register(){
+    let navigate = useNavigate();
     const [registerEmail, setRegisterEmail]= useState('');
     const [registerPassword, setRegisterPassword]= useState('');
     const {register, handleSubmit, watch, formState: {errors} } = useForm({
@@ -23,7 +24,7 @@ export default function Register(){
         try {
             const user = await createUserWithEmailAndPassword(auth, data.email, data.password)
             console.log(user);
-            return <Link to='/' className='submit-button'/>
+            navigate('/');
         } catch(error){
             console.log(error.message);
         }

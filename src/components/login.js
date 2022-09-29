@@ -1,6 +1,6 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
-import React from "react";
+import React, {useEffect} from "react";
 import {useForm} from "react-hook-form";
 import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai";
 import {useState} from "react";
@@ -8,7 +8,9 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase-config';
 import HomeLogIn from "./homeLogIn";
 
+
 export default function Login(){
+    let navigate = useNavigate();
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
     const {register, handleSubmit, formState: {errors} } = useForm({
@@ -20,18 +22,29 @@ export default function Login(){
     );
     const onSubmit = async (data) =>{
         console.log(loginEmail, loginPassword, data);
+        console.log(auth);
         try {
-            const user = await signInWithEmailAndPassword(auth, data.email, data.password)
+            const user = await signInWithEmailAndPassword(auth, data.email, data.password);
+            navigate('/');
             console.log(user)
         } catch(error){
             console.log(error.message);
         }
     }
+    // const redirect=(data)=>{
+    //
+    //         return <Link to='/'/>
+    //     }
+    // }
     const [passwordEye, setPasswordEye] = useState(false);
 
     const handlePasswordClick = () => {
         setPasswordEye(!passwordEye);
     };
+
+    useEffect(() => {
+
+    })
     return (
         <>
             <HomeLogIn/>
@@ -85,7 +98,7 @@ export default function Login(){
                 </div>
                 <div className='form-button'>
                     <Link to='/rejestracja' className='button-logIn'>Załóż konto</Link>
-                    <input className='submit-button' id='submit-button' type='submit' value="Zaloguj się"/>
+                    <input  className='submit-button' id='submit-button' type='submit' value="Zaloguj się"/>
                 </div>
             </form>
 
