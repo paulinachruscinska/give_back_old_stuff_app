@@ -31,11 +31,7 @@ export default function Login(){
             console.log(error.message);
         }
     }
-    // const redirect=(data)=>{
-    //
-    //         return <Link to='/'/>
-    //     }
-    // }
+
     const [passwordEye, setPasswordEye] = useState(false);
 
     const handlePasswordClick = () => {
