@@ -1,10 +1,12 @@
 import {useState} from "react";
+import classNames from "classnames";
 
 export default function GiveBackSelectBox3({allCity,addCity, addHelp, allHelp}){
     const[visibility, setVisibility] = useState('hidden');
     const [citySelect, setCitySelect] = useState('-wybierz-')
-    const [click, setClick] = useState(false)
-    const [addClass, setAddClass] = useState('uclicked')
+    const [recipient, setRecipient] = useState('')
+
+    const recipientsList = ['dzieciom', 'samotnym matkom', 'bezdomnym', 'niepełnosprawnym', 'osobom starszym']
 
     const selectClick=()=> visibility === 'hidden' ? setVisibility('active') : setVisibility('hidden');
      const selectCityClick=(event)=>{
@@ -13,15 +15,6 @@ export default function GiveBackSelectBox3({allCity,addCity, addHelp, allHelp}){
         console.log(allCity);
      }
 
-     const selectButton = (event)=>{
-         addHelp(event.target.textContent);
-         if(click===true){
-             setAddClass('clicked')
-         } else {
-             setAddClass('unclicked')
-         }
-         event.preventDefault()
-     }
 
     return(
     <section className='giveBackSelect__box'>
@@ -44,12 +37,20 @@ export default function GiveBackSelectBox3({allCity,addCity, addHelp, allHelp}){
                     </ul>
                 </div>
                 <p className='giveBackSteps__form__text'>Komu chcesz pomóc?</p>
-                <div className='buttons' onClick={selectButton}>
-                    <button onClick={()=>setClick(true)} className={'giveBackSteps__form__button adres__text ' + addClass}>dzieciom</button>
-                    <button onClick={()=>setClick(true)} className={'giveBackSteps__form__button adres__text '+ addClass}>samotnym matkom</button>
-                    <button className='giveBackSteps__form__button adres__text '>bezdomnym</button>
-                    <button className='giveBackSteps__form__button adres__text '>niepełnosprawnym</button>
-                    <button className='giveBackSteps__form__button adres__text '>osobom starszym</button>
+                <div className='buttons'>
+                    {recipientsList.map(((recipientName, index) => (
+                        <button key={index}
+                            onClick={() => {
+                                setRecipient(recipientName)
+                                addHelp(recipientName)
+                            }}
+                            className={classNames('giveBackSteps__form__button adres__text', {
+                                clicked: recipient === recipientName,
+                            })}
+                        >
+                            {recipientName}
+                        </button>
+                    )))}
                 </div>
                 <p className='giveBackSteps__form__text'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
                 <input className='organizacja__input' type='text'/>
