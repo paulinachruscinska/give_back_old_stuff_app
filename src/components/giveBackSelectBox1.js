@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function GiveBackSelectBox1({ allCheckbox, addCheckBox }) {
 
@@ -20,26 +20,26 @@ export default function GiveBackSelectBox1({ allCheckbox, addCheckBox }) {
                     onClick={checkboxClick}
                     className='giveBackSteps__form'>
                     <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='radio' id='checkbox1' value='ubrania, które nadają się do ponownego
+                        <input className='checkbox__form' type='checkbox' id='checkbox1' value='ubrania, które nadają się do ponownego
                             użycia'
                                />
                         <label className='adres__text' htmlFor='checkbox1'>ubrania, które nadają się do ponownego
                             użycia</label>
                     </div>
                     <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='radio' id='checkbox2' value='ubrania, do wyrzucenia'/>
+                        <input className='checkbox__form' type='checkbox' id='checkbox2' value='ubrania, do wyrzucenia'/>
                         <label className='adres__text' htmlFor='checkbox2'>ubrania, do wyrzucenia</label>
                     </div>
                     <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='radio' id='checkbox3' value='zabawki'/>
+                        <input className='checkbox__form' type='checkbox' id='checkbox3' value='zabawki'/>
                         <label className='adres__text' htmlFor='checkbox3'>zabawki</label>
                     </div>
                     <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='radio' id='checkbox4' value='książki'/>
+                        <input className='checkbox__form' type='checkbox' id='checkbox4' value='książki'/>
                         <label className='adres__text' htmlFor='checkbox4'>książki</label>
                     </div>
                     <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='radio' id='checkbox5' value='Inne'/>
+                        <input className='checkbox__form' type='checkbox' id='checkbox5' value='Inne'/>
                         <label className='adres__text' htmlFor='checkbox5'>Inne</label>
                     </div>
                 </form>

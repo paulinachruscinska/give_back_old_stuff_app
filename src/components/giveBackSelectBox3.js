@@ -1,20 +1,28 @@
 import {useState} from "react";
 
-export default function GiveBackSelectBox3({allCity,addCity}){
+export default function GiveBackSelectBox3({allCity,addCity, addHelp, allHelp}){
     const[visibility, setVisibility] = useState('hidden');
     const [citySelect, setCitySelect] = useState('-wybierz-')
-    const [click1, setClick1] = useState("unclicked");
-    const [click2, setClick2] = useState("unclicked");
-    const [click3, setClick3] = useState("unclicked");
-    const [click4, setClick4] = useState("unclicked");
-    const [click5, setClick5] = useState("unclicked");
+    const [click, setClick] = useState(false)
+    const [addClass, setAddClass] = useState('uclicked')
+
     const selectClick=()=> visibility === 'hidden' ? setVisibility('active') : setVisibility('hidden');
      const selectCityClick=(event)=>{
-        setCitySelect(event.target.textContent)
-         addCity(event.target.textContent);
+        setCitySelect(event.target.textContent);
+        addCity(event.target.textContent);
         console.log(allCity);
+     }
 
-    }
+     const selectButton = (event)=>{
+         addHelp(event.target.textContent);
+         if(click===true){
+             setAddClass('clicked')
+         } else {
+             setAddClass('unclicked')
+         }
+         event.preventDefault()
+     }
+
     return(
     <section className='giveBackSelect__box'>
         <section className='giveBackImportantInformation'>
@@ -36,12 +44,12 @@ export default function GiveBackSelectBox3({allCity,addCity}){
                     </ul>
                 </div>
                 <p className='giveBackSteps__form__text'>Komu chcesz pomóc?</p>
-                <div className='buttons' >
-                    <button onClick={()=>click1==='unclicked'?setClick1('clicked'):setClick1('unclicked')} className={'giveBackSteps__form__button adres__text ' + click1}>dzieciom</button>
-                    <button onClick={()=>click1==='unclicked'?setClick2('clicked'):setClick2('unclicked')} className={'giveBackSteps__form__button adres__text ' + click2}>samotnym matkom</button>
-                    <button onClick={()=>click3==='unclicked'?setClick3('clicked'):setClick3('unclicked')} className={'giveBackSteps__form__button adres__text ' + click3}>bezdomnym</button>
-                    <button onClick={()=>click4==='unclicked'?setClick4('clicked'):setClick4('unclicked')} className={'giveBackSteps__form__button adres__text ' + click4}>niepełnosprawnym</button>
-                    <button onClick={()=>click5==='unclicked'?setClick5('clicked'):setClick5('unclicked')} className={'giveBackSteps__form__button adres__text ' + click5}>osobom starszym</button>
+                <div className='buttons' onClick={selectButton}>
+                    <button onClick={()=>setClick(true)} className={'giveBackSteps__form__button adres__text ' + addClass}>dzieciom</button>
+                    <button onClick={()=>setClick(true)} className={'giveBackSteps__form__button adres__text '+ addClass}>samotnym matkom</button>
+                    <button className='giveBackSteps__form__button adres__text '>bezdomnym</button>
+                    <button className='giveBackSteps__form__button adres__text '>niepełnosprawnym</button>
+                    <button className='giveBackSteps__form__button adres__text '>osobom starszym</button>
                 </div>
                 <p className='giveBackSteps__form__text'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
                 <input className='organizacja__input' type='text'/>
