@@ -1,7 +1,7 @@
 import {useState} from "react";
 import classNames from "classnames";
 
-export default function GiveBackSelectBox3({allCity,addCity, addHelp, allHelp}){
+export default function GiveBackSelectBox3({allCity,addCity, addHelp}){
     const[visibility, setVisibility] = useState('hidden');
     const [citySelect, setCitySelect] = useState('-wybierz-')
     const [recipient, setRecipient] = useState('')
@@ -40,7 +40,8 @@ export default function GiveBackSelectBox3({allCity,addCity, addHelp, allHelp}){
                 <div className='buttons'>
                     {recipientsList.map(((recipientName, index) => (
                         <button key={index}
-                            onClick={() => {
+                            onClick={(event) => {
+                                event.preventDefault()
                                 setRecipient(recipientName)
                                 addHelp(recipientName)
                             }}

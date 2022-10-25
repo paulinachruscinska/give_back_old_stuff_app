@@ -1,4 +1,14 @@
 export default function giveBackSelectBox5({ allQuantity, allCity, allData, allCheckBox, allHelp }){
+    const numbers= () =>{
+      if(allQuantity[0]==='1'){
+          return `${allQuantity[0]} worek`
+      } else if(allQuantity[0]==='5') {
+          return `${allQuantity[0]} worków`
+      } else {
+          return `${allQuantity[0]} worki`
+      }
+    }
+
     return(
         <section className='giveBackSelect__box'>
             <section className='giveBackSteps'>
@@ -6,7 +16,7 @@ export default function giveBackSelectBox5({ allQuantity, allCity, allData, allC
                 <div className='oddajesz'>
                     <p className='giveBackSteps__form__text'>Pomagasz: {allHelp}</p>
                     <p className='giveBackSteps__form__text'>Oddajesz: {allCheckBox}</p>
-                    <p className='giveBackSteps__form__text'> {allQuantity} worki </p>
+                    <p className='giveBackSteps__form__text'> {numbers()} </p>
                     <p className='giveBackSteps__form__text'>dla lokalizacji: {allCity} </p>
                 </div>
                 <div className='adres'>
