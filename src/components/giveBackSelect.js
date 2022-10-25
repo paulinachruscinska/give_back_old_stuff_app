@@ -14,8 +14,9 @@ export default function GiveBackSelect(){
     const [checkboxInformation,setCheckBoxInformation] = useState([]);
     const [quantityInformation, setQuantityInformation] =useState([]);
     const [cityInformation, setCityInformation]=useState([]);
+    const [whoHelp, setWhoHelp]=useState([]);
     const [data, setData] =useState([]);
-    const carousel= [<GiveBackSelectBox1 allCheckbox={checkboxInformation} addCheckBox={setCheckBoxInformation} />, <GiveBackSelectBox2 allQuantity={quantityInformation} addQuantity={setQuantityInformation}/>, <GiveBackSelectBox3 allCity={cityInformation} addCity={setCityInformation}/>, <GiveBackSelectBox4 allData={data} addData={setData} />, <GiveBackSelectBox5 allCheckBox={checkboxInformation} allQuantity={quantityInformation} allCity={cityInformation} allData={data}/>];
+    const carousel= [<GiveBackSelectBox1 allCheckbox={checkboxInformation} addCheckBox={setCheckBoxInformation} />, <GiveBackSelectBox2 allQuantity={quantityInformation} addQuantity={setQuantityInformation}/>, <GiveBackSelectBox3 allCity={cityInformation} addCity={setCityInformation} addHelp={setWhoHelp} allHelp={whoHelp}/>, <GiveBackSelectBox4 allData={data} addData={setData} />, <GiveBackSelectBox5 allCheckBox={checkboxInformation} allQuantity={quantityInformation} allCity={cityInformation} allData={data}/>];
     const [slideIndex, setSlideIndex] = useState(1);
     const nextSlide=()=>{
         if(slideIndex!==5){
