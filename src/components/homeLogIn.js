@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { Link } from "react-router-dom";
 import { onAuthStateChanged,signOut } from 'firebase/auth';
 import { auth } from '../firebase-config';
 
-export default function HomeLogIn(){
-    const [user, setUser] = useState({});
+export default function HomeLogIn({user, setUser}){
+
     console.log(user);
 
     const logout = async () => {
@@ -28,7 +28,7 @@ export default function HomeLogIn(){
                 <section className='homeHeader__logIn'>
                     <p className='homeHeader__logIn--signIn'> {`Cześć ${user?.email}!`} </p>
                     <Link to='oddaj-rzeczy' className='homeHeader__logIn--signUp'>Oddaj rzeczy</Link>
-                    <Link to='wylogowano' className='homeHeader__logIn--signIn' onClick={logout}>Wyloguj</Link>
+                    <Link to='/wylogowano' className='homeHeader__logIn--signIn' onClick={logout}>Wyloguj</Link>
                 </section>
             )
         }
