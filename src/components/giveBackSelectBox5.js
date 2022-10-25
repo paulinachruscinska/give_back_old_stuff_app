@@ -1,18 +1,13 @@
-export default function giveBackSelectBox5({ allQuantity, allCity, allData, allCheckBox }){
+export default function giveBackSelectBox5({ allQuantity, allCity, allData, allCheckBox, allHelp }){
     return(
         <section className='giveBackSelect__box'>
             <section className='giveBackSteps'>
                 <p className='giveBackSteps__head'>Podsumowanie Twojej darowizny</p>
                 <div className='oddajesz'>
+                    <p className='giveBackSteps__form__text'>Pomagasz: {allHelp}</p>
                     <p className='giveBackSteps__form__text'>Oddajesz: {allCheckBox}</p>
-                    <div className='oddajesz__box'>
-                        <span/>
-                        <p className='giveBackSteps__form__text'> {allQuantity} worki </p>
-                    </div>
-                    <div className='oddajesz__box'>
-                        <span/>
-                        <p className='giveBackSteps__form__text'>dla lokalizacji: {allCity} </p>
-                    </div>
+                    <p className='giveBackSteps__form__text'> {allQuantity} worki </p>
+                    <p className='giveBackSteps__form__text'>dla lokalizacji: {allCity} </p>
                 </div>
                 <div className='adres'>
                     <div className='giveBackSteps__form__text'>Adres odbioru
