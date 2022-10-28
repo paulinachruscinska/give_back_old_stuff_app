@@ -16,7 +16,7 @@ export default function giveBackSelectBox5({ allQuantity, allCity, allData, allC
                 <div className='oddajesz'>
                     <p className='giveBackSteps__form__text'>Pomagasz: {allHelp}</p>
                     <p className='giveBackSteps__form__text'>Oddajesz: {allCheckBox}</p>
-                    <p className='giveBackSteps__form__text'> {numbers()} </p>
+                    <p className='giveBackSteps__form__text'>Ilość: {numbers()} </p>
                     <p className='giveBackSteps__form__text'>dla lokalizacji: {allCity} </p>
                 </div>
                 <div className='adres'>

@@ -7,27 +7,60 @@ import GiveBackSelectBox5 from "./giveBackSelectBox5";
 
 
 
-
-
-
 export default function GiveBackSelect(){
     const [checkboxInformation,setCheckBoxInformation] = useState([]);
     const [quantityInformation, setQuantityInformation] =useState([]);
     const [cityInformation, setCityInformation]=useState([]);
     const [whoHelp, setWhoHelp]=useState([]);
     const [data, setData] =useState([]);
-    const carousel= [<GiveBackSelectBox1 allCheckbox={checkboxInformation} addCheckBox={setCheckBoxInformation} />, <GiveBackSelectBox2 allQuantity={quantityInformation} addQuantity={setQuantityInformation}/>, <GiveBackSelectBox3 allCity={cityInformation} addCity={setCityInformation} addHelp={setWhoHelp} />, <GiveBackSelectBox4 allData={data} addData={setData} />, <GiveBackSelectBox5 allCheckBox={checkboxInformation} allQuantity={quantityInformation} allCity={cityInformation} allData={data} allHelp={whoHelp}/>];
     const [slideIndex, setSlideIndex] = useState(1);
-    const nextSlide=()=>{
+    const nextSlide=(event)=>{
+        event.preventDefault()
         if(slideIndex!==5){
             setSlideIndex(slideIndex + 1)
         }
     }
-    const prevSlide=()=>{
+    const prevSlide=(event)=>{
+        event.preventDefault()
         if(slideIndex!==1){
             setSlideIndex(slideIndex - 1)
         }
     }
+    const carousel= [
+        <GiveBackSelectBox1
+            nextSlide ={nextSlide}
+            prevSlide={prevSlide}
+            allCheckbox={checkboxInformation}
+            addCheckBox={setCheckBoxInformation}
+        />,
+        <GiveBackSelectBox2
+            nextSlide ={nextSlide}
+            prevSlide={prevSlide}
+            allQuantity={quantityInformation}
+            addQuantity={setQuantityInformation}
+        />,
+        <GiveBackSelectBox3
+            nextSlide ={nextSlide}
+            prevSlide={prevSlide}
+            allCity={cityInformation}
+            addCity={setCityInformation}
+            addHelp={setWhoHelp}
+        />,
+        <GiveBackSelectBox4
+            nextSlide ={nextSlide}
+            prevSlide={prevSlide}
+            allData={data}
+            addData={setData}
+        />,
+        <GiveBackSelectBox5
+            allCheckBox={checkboxInformation}
+            allQuantity={quantityInformation}
+            allCity={cityInformation}
+            allData={data}
+            allHelp={whoHelp}
+        />
+    ];
+
     return(
         <section className='giveBackSelect-carousel'>
             {carousel.map((box, index)=>{
@@ -37,8 +70,6 @@ export default function GiveBackSelect(){
                     {box}
                 </div>
             })}
-            <button onClick={prevSlide} className='wstecz'>Wstecz</button>
-            <button onClick={nextSlide} className='dalej'>Dalej</button>
         </section>
     )
 }

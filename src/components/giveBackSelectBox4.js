@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form";
+import React from "react";
 
-export default function GiveBackSelectBox4({ addData, allData }){
+export default function GiveBackSelectBox4({ addData, allData, prevSlide, nextSlide }){
     const {register, handleSubmit } = useForm({
             defaultValues:{
                 street:'',
@@ -15,6 +16,7 @@ export default function GiveBackSelectBox4({ addData, allData }){
     );
 
     const onSubmit = (event, newInfo) => {
+        event.preventDefault()
         console.log('działa')
         console.log(newInfo);
         if (typeof addData === 'function') {
@@ -70,6 +72,8 @@ export default function GiveBackSelectBox4({ addData, allData }){
                             <textarea name='textarea' {...register('textArea')} />
                         </label>
                     </div>
+                    <button onClick={prevSlide} className='wstecz'>Wstecz</button>
+                    <button type='submit' onClick={nextSlide} className='dalej'>Dalej</button>
                 </form>
             </section>
         </section>
