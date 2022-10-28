@@ -1,6 +1,7 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import React from "react";
 
-export default function GiveBackSelectBox2({allQuantity, addQuantity}){
+export default function GiveBackSelectBox2({allQuantity, addQuantity ,nextSlide, prevSlide}){
     const [liSelect, setLiSelect] = useState('-wybierz-');
     const[visibility, setVisibility] = useState('hidden');
     const selectClick=()=> visibility === 'hidden' ? setVisibility('active') : setVisibility('hidden');
@@ -31,6 +32,8 @@ export default function GiveBackSelectBox2({allQuantity, addQuantity}){
                             <li className='adres__text'>5</li>
                         </ul>
                     </div>
+                    <button onClick={prevSlide} className='wstecz'>Wstecz</button>
+                    <button onClick={nextSlide} className='dalej'>Dalej</button>
                 </form>
             </section>
         </section>

@@ -1,7 +1,8 @@
 import {useState} from "react";
 import classNames from "classnames";
+import React from "react";
 
-export default function GiveBackSelectBox3({allCity,addCity, addHelp}){
+export default function GiveBackSelectBox3({allCity,addCity, addHelp, prevSlide, nextSlide}){
     const[visibility, setVisibility] = useState('hidden');
     const [citySelect, setCitySelect] = useState('-wybierz-')
     const [recipient, setRecipient] = useState('')
@@ -55,6 +56,8 @@ export default function GiveBackSelectBox3({allCity,addCity, addHelp}){
                 </div>
                 <p className='giveBackSteps__form__text'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
                 <input className='organizacja__input' type='text'/>
+                <button onClick={prevSlide} className='wstecz'>Wstecz</button>
+                <button onClick={nextSlide} className='dalej'>Dalej</button>
             </form>
         </section>
     </section>

@@ -1,9 +1,9 @@
-import React from "react";
-
-export default function GiveBackSelectBox1({ allCheckbox, addCheckBox }) {
-
-    const checkboxClick=(event)=> {
-        addCheckBox(event.target.value);
+import React, {useState} from "react";
+const options = ['ubrania, które nadają się do ponownego użycia', 'ubrania, do wyrzucenia', 'zabawki', 'książki', 'Inne' ]
+export default function GiveBackSelectBox1({ allCheckbox, addCheckBox, nextSlide, prevSlide }) {
+    const [check, setCheck] = useState('')
+    const checkboxClick=()=> {
+        addCheckBox(check);
         console.log(allCheckbox);
     }
     return(
@@ -19,29 +19,20 @@ export default function GiveBackSelectBox1({ allCheckbox, addCheckBox }) {
                 <form
                     onClick={checkboxClick}
                     className='giveBackSteps__form'>
-                    <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='checkbox' id='checkbox1' value='ubrania, które nadają się do ponownego
-                            użycia'
-                               />
-                        <label className='adres__text' htmlFor='checkbox1'>ubrania, które nadają się do ponownego
-                            użycia</label>
-                    </div>
-                    <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='checkbox' id='checkbox2' value='ubrania, do wyrzucenia'/>
-                        <label className='adres__text' htmlFor='checkbox2'>ubrania, do wyrzucenia</label>
-                    </div>
-                    <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='checkbox' id='checkbox3' value='zabawki'/>
-                        <label className='adres__text' htmlFor='checkbox3'>zabawki</label>
-                    </div>
-                    <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='checkbox' id='checkbox4' value='książki'/>
-                        <label className='adres__text' htmlFor='checkbox4'>książki</label>
-                    </div>
-                    <div className='giveBackSteps__form__item'>
-                        <input className='checkbox__form' type='checkbox' id='checkbox5' value='Inne'/>
-                        <label className='adres__text' htmlFor='checkbox5'>Inne</label>
-                    </div>
+                    {options.map((option, index)=>{
+                        return(
+                            <div
+                                className='giveBackSteps__form__item'
+                                key={index}
+                                onClick={()=>setCheck(option)}
+                            >
+                                <input className='checkbox__form' type='radio' name='radio' id={'option' + index }/>
+                                <label className='adres__text' htmlFor={'option' + index }>{option}</label>
+                            </div>
+                            )
+                    })}
+                    <button onClick={prevSlide} className='wstecz'>Wstecz</button>
+                    <button onClick={nextSlide} className='dalej'>Dalej</button>
                 </form>
             </section>
         </section>
