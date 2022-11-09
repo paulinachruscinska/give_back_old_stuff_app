@@ -12,7 +12,7 @@ export default function GiveBackSelect(){
     const [quantityInformation, setQuantityInformation] =useState([]);
     const [cityInformation, setCityInformation]=useState([]);
     const [whoHelp, setWhoHelp]=useState([]);
-    const [data, setData] =useState([]);
+    const [data, setData] = useState([]);
     const [slideIndex, setSlideIndex] = useState(1);
     const nextSlide=(event)=>{
         event.preventDefault()

@@ -23,33 +23,33 @@ export default function giveBackSelectBox5({ allQuantity, allCity, allData, allC
                     <div className='giveBackSteps__form__text'>Adres odbioru
                         <div className='adres__box'>
                             <p className='adres__text'>Ulica</p>
-                            <p className='adres__text'>{allData[0]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Miasto</p>
-                            <p className='adres__text'>{allData[1]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Kod pocztowy</p>
-                            <p className='adres__text'>{allData[2]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Numer telefonu</p>
-                            <p className='adres__text'>{allData[3]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                     </div>
                     <div className='giveBackSteps__form__text'>Termin odbioru
                         <div className='adres__box'>
                             <p className='adres__text'>Data</p>
-                            <p className='adres__text'>{allData[4]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Godzina</p>
-                            <p className='adres__text'>{allData[5]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Uwagi dla kuriera</p>
-                            <p className='adres__text'>{allData[6]}</p>
+                            <p className='adres__text'>{allData}</p>
                         </div>
                     </div>
                 </div>

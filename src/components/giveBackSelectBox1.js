@@ -31,8 +31,10 @@ export default function GiveBackSelectBox1({ allCheckbox, addCheckBox, nextSlide
                             </div>
                             )
                     })}
-                    <button onClick={prevSlide} className='wstecz'>Wstecz</button>
-                    <button onClick={nextSlide} className='dalej'>Dalej</button>
+                    <div className='slides'>
+                        <button onClick={prevSlide} className='wstecz'>Wstecz</button>
+                        <button onClick={nextSlide} className='dalej'>Dalej</button>
+                    </div>
                 </form>
             </section>
         </section>
