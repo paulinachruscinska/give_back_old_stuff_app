@@ -35,8 +35,9 @@
       background: url("../assets/Background-Form.jpg") no-repeat right;
       background-size: cover;
       padding: 0 142px;
-      height: calc(100vh - 179px);
+      //height: calc(100vh - 179px);
       position: relative;
+      z-index: 1;
 
       .giveBackSteps__step {
         margin: 0;
@@ -223,6 +224,12 @@
     width:100%;
   }
 }
+.slides{
+  display: flex;
+  justify-content: start;
+  margin: 1rem 0;
+  gap: 2rem;
+}
 .wstecz{
   border: 0.75px solid $color-text-grey;
   font-size: 24px;
@@ -230,10 +237,6 @@
   font-weight: 300;
   padding: 23px 63px;
   font-family: $font-base;
-  position: absolute;
-  bottom: 50px;
-  z-index: 2;
-  left:142px;
 }
 .dalej{
   border: 0.75px solid $color-text-grey;
@@ -242,10 +245,6 @@
   font-weight: 300;
   padding: 23px 63px;
   font-family: $font-base;
-  position: absolute;
-  bottom: 50px;
-  left:400px;
-  z-index: 2;
 }
 
 
