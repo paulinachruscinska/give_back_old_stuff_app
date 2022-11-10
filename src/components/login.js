@@ -6,7 +6,6 @@ import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai";
 import {useState} from "react";
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase-config';
-import HomeLogIn from "./homeLogIn";
 
 
 export default function Login(){

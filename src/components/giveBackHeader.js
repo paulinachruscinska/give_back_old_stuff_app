@@ -7,7 +7,7 @@ export default function GiveBackHeader(){
 
             <header className='homeHeader'>
                 <section className='giveBackHeader__background'></section>
-                <section className='homeHeader__info'>
+                <section className='giveBack__info'>
                     <nav className='homeHeader__nav'>
                         <input type='checkbox' className='hamburger'/>
                         <ul className='homeHeader__nav--ul'>
@@ -18,7 +18,7 @@ export default function GiveBackHeader(){
                             <li><HashLink to='/#homeContactFooter'>Kontakt</HashLink></li>
                         </ul>
                     </nav>
-                    <section className='homeHeader__main-section'>
+                    <section className='giveBack__main-section'>
                         <h2>Oddaj rzeczy, których już nie chcesz <br/>
                             POTRZEBUJĄCYM</h2>
                         <div className='decoration'></div>
