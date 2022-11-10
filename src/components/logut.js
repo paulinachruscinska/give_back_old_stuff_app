@@ -1,4 +1,4 @@
-import HomeLogIn from "./homeLogIn";
+
 import {HashLink} from "react-router-hash-link";
 import React from "react";
 import {Link} from "react-router-dom";
@@ -9,7 +9,6 @@ return(
 
         <header className='homeHeader_log'>
             <section className='homeHeader__info'>
-                <HomeLogIn/>
                 <nav className='homeHeader__nav'>
                     <input type='checkbox' className='hamburger'/>
                     <ul className='homeHeader__nav--ul'>
