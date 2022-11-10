@@ -1,9 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
-import HomeLogIn from "./homeLogIn";
 
-export default function HomeHeader({user, setUser}){
+export default function HomeHeader({user}){
     const goToLink =()=>{
         if(user===null){
             return (
@@ -25,7 +24,6 @@ export default function HomeHeader({user, setUser}){
         <header className='homeHeader'>
             <section className='homeHeader__background'></section>
             <section className='homeHeader__info'>
-                <HomeLogIn user={user} setUser={setUser}/>
                 <nav className='homeHeader__nav'>
                     <input type='checkbox' className='hamburger'/>
                     <ul className='homeHeader__nav--ul'>

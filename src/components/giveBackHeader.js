@@ -1,6 +1,5 @@
 import {HashLink} from "react-router-hash-link";
 import React from "react";
-import HomeLogIn from "./homeLogIn";
 
 export default function GiveBackHeader(){
     return(
@@ -9,7 +8,6 @@ export default function GiveBackHeader(){
             <header className='homeHeader'>
                 <section className='giveBackHeader__background'></section>
                 <section className='homeHeader__info'>
-                    <HomeLogIn/>
                     <nav className='homeHeader__nav'>
                         <input type='checkbox' className='hamburger'/>
                         <ul className='homeHeader__nav--ul'>

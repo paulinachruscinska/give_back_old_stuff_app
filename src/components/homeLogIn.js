@@ -5,8 +5,6 @@ import { auth } from '../firebase-config';
 
 export default function HomeLogIn({user, setUser}){
 
-    console.log(user);
-
     const logout = async () => {
         await signOut(auth)
     }
@@ -16,7 +14,7 @@ export default function HomeLogIn({user, setUser}){
         })
     }, []);
     const logIn = () => {
-        if (user === null ){
+        if (user == null ){
             return(
                 <section className='homeHeader__logIn'>
                     <Link to='/logowanie' className='homeHeader__logIn--signIn'>Zaloguj</Link>

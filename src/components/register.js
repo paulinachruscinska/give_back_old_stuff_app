@@ -44,10 +44,6 @@ export default function Register(){
         <section className='register__logIn'>
             <header className='homeHeader_log'>
                 <section className='homeHeader__info'>
-                    <section className='homeHeader__logIn'>
-                        <Link to='/logowanie' className='homeHeader__logIn--signIn'>Zaloguj</Link>
-                        <Link to='/rejestracja' className='homeHeader__logIn--signUp'>Załóż konto</Link>
-                    </section>
                     <nav className='homeHeader__nav'>
                         <input type='checkbox' className='hamburger'/>
                         <ul className='homeHeader__nav--ul'>

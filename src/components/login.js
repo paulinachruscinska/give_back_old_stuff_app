@@ -46,7 +46,6 @@ export default function Login(){
 
             <header className='homeHeader_log'>
                 <section className='homeHeader__info'>
-                    <HomeLogIn/>
                     <nav className='homeHeader__nav'>
                         <input type='checkbox' className='hamburger'/>
                         <ul className='homeHeader__nav--ul'>
@@ -78,7 +77,7 @@ export default function Login(){
                         <label>
                             <p className='form__logIn--text'>Hasło</p>
                             <input
-                                type='password'
+                                type={passwordEye === false ? "password" : "text"}
                                 className='input-logIn'
                                 onChange={(event)=>setLoginPassword(event.target.value)}
                                 {...register('password', { required: 'To pole jest obowiązkowe', minLength: {value:6, message:"Podane hasło jest za krótkie"}})} />
