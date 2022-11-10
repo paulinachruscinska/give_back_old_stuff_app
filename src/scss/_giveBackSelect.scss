@@ -1,5 +1,4 @@
 @import 'settings/fonts';
-@import 'settings/colors';
 
 .slideActive {
   opacity: 1;
@@ -28,6 +27,7 @@
         font-size: 1.375rem;
         color: $color-text-grey;
         margin: 0;
+        padding-bottom: 10px;
       }
     }
 
@@ -35,9 +35,9 @@
       background: url("../assets/Background-Form.jpg") no-repeat right;
       background-size: cover;
       padding: 0 142px;
-      //height: calc(100vh - 179px);
       position: relative;
       z-index: 1;
+      height: 100%;
 
       .giveBackSteps__step {
         margin: 0;
@@ -49,6 +49,7 @@
 
       .giveBackSteps__head {
         margin: 0;
+        padding: 20px 0;
         font-size: 2.25rem;
         font-weight: 600;
       }
@@ -216,21 +217,19 @@
 .giveBackSelect-carousel{
   position: relative;
   height: 100vh;
-  width:100vw;
+  max-width:100%;
   .giveBackSelect__box{
     position: absolute;
     top: 0;
     left:0;
     width:100%;
+    height: 100vh;
   }
 }
-.slides{
-  display: flex;
-  justify-content: flex-start;
-  margin: 1rem 0;
-  gap: 2rem;
-}
 .wstecz{
+  position: absolute;
+  left:142px;
+  bottom: 30px;
   border: 0.75px solid $color-text-grey;
   font-size: 24px;
   line-height: 32px;
@@ -239,6 +238,9 @@
   font-family: $font-base;
 }
 .dalej{
+  position: absolute;
+  left: 360px;
+  bottom: 30px;
   border: 0.75px solid $color-text-grey;
   font-size: 24px;
   line-height: 32px;
