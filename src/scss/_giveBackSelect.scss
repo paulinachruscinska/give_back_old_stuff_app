@@ -186,6 +186,8 @@
   border: 0.75px solid $color-text-grey;
   font-family: $font-base;
   width: 263px;
+  color: black;
+  background-color: $color-lightgrey;
 }
 .organizacja__input{
   width:500px;
@@ -263,6 +265,8 @@
   }
 }
 .wstecz{
+  color:black;
+  background-color: $color-lightgrey;
   width:100px;
   box-sizing: border-box;
   margin: 10px;
@@ -283,6 +287,8 @@
   }
 }
 .dalej{
+  background-color: $color-lightgrey;
+  color:black;
   width:100px;
   box-sizing: border-box;
   margin: 10px;
