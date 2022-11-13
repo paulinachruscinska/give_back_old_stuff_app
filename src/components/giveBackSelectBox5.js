@@ -23,33 +23,33 @@ export default function giveBackSelectBox5({ allQuantity, allCity, allData, allC
                     <div className='giveBackSteps__form__text'>Adres odbioru
                         <div className='adres__box'>
                             <p className='adres__text'>Ulica</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.street}</strong></p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Miasto</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.city}</strong></p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Kod pocztowy</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.postcode}</strong></p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Numer telefonu</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.phoneNumber}</strong></p>
                         </div>
                     </div>
                     <div className='giveBackSteps__form__text'>Termin odbioru
                         <div className='adres__box'>
                             <p className='adres__text'>Data</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.date}</strong></p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Godzina</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.hour}</strong></p>
                         </div>
                         <div className='adres__box'>
                             <p className='adres__text'>Uwagi dla kuriera</p>
-                            <p className='adres__text'>{allData}</p>
+                            <p className='adres__text'><strong>{allData.textArea}</strong></p>
                         </div>
                     </div>
                 </div>
