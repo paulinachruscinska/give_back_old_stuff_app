@@ -28,7 +28,14 @@ const instruction = [
     }
 ]
 
-export default function HomeSimpleSteps(){
+export default function HomeSimpleSteps({user}){
+    const goToLink =()=>{
+        if(user==null){
+            return <Link to='/logowanie' className='button'><span>ODDAJ RZECZY</span></Link>
+        } else {
+            return <Link to='/oddaj-rzeczy' className='button'><span>ODDAJ RZECZY</span></Link>
+        }
+    }
     return (
         <section className='homeSimpleSteps' id='homeSimpleSteps'>
             <div className='homeSimpleSteps__text'>
@@ -47,7 +54,7 @@ export default function HomeSimpleSteps(){
                 )})}
             </div>
             <div className='homeSimpleSteps__button'>
-                <Link to='/logowanie' className='button'><span>ODDAJ RZECZY</span></Link>
+                {goToLink()}
             </div>
         </section>
     )
