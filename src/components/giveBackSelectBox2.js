@@ -1,16 +1,12 @@
 import {useState} from "react";
 import React from "react";
 
-export default function GiveBackSelectBox2({allQuantity, addQuantity ,nextSlide, prevSlide}){
+export default function GiveBackSelectBox2({addQuantity ,nextSlide, prevSlide}){
+    const numbers = ['1', '2', '3', '4', '5']
     const [liSelect, setLiSelect] = useState('-wybierz-');
     const[visibility, setVisibility] = useState('hidden');
     const selectClick=()=> visibility === 'hidden' ? setVisibility('active') : setVisibility('hidden');
 
-    const selectUlClick = (event)=>{
-        setLiSelect(event.target.textContent);
-        addQuantity([event.target.textContent])
-        console.log(allQuantity);
-    }
     return(
         <section className='giveBackSelect__box'>
             <section className='giveBackImportantInformation'>
@@ -24,12 +20,17 @@ export default function GiveBackSelectBox2({allQuantity, addQuantity ,nextSlide,
                     <span className='adres__text'>Liczba 60l worków:</span>
                     <div className='select'>
                         <span onClick={selectClick} className='adres__text--select'>{liSelect}</span>
-                        <ul onClick={selectUlClick} className={'giveBackSteps__ul ' + visibility}>
-                            <li className='adres__text'>1</li>
-                            <li className='adres__text'>2</li>
-                            <li className='adres__text'>3</li>
-                            <li className='adres__text'>4</li>
-                            <li className='adres__text'>5</li>
+                        <ul  className={'giveBackSteps__ul ' + visibility}>
+                            {numbers.map((number, index)=>{
+                                return <li
+                                    className='adres__text'
+                                    key={index}
+                                    onClick={()=> {
+                                        setLiSelect(number)
+                                        addQuantity(number)
+                                    }}
+                                >{number}</li>
+                            })}
                         </ul>
                     </div>
                     <button onClick={prevSlide} className='wstecz'>Wstecz</button>

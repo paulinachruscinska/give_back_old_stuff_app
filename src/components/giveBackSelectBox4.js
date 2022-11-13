@@ -1,6 +1,5 @@
 import {useForm} from "react-hook-form";
 import React from "react";
-
 export default function GiveBackSelectBox4({ addData, allData, prevSlide, nextSlide }){
     const {register, handleSubmit } = useForm({
             defaultValues:{
@@ -15,17 +14,18 @@ export default function GiveBackSelectBox4({ addData, allData, prevSlide, nextSl
         }
     );
 
-    const onSubmit = (event, newInfo) => {
+    const onSubmit = (newInfo, event) => {
         event.preventDefault()
         console.log('działa')
         console.log(newInfo);
         if (typeof addData === 'function') {
-            addData(prev => [...prev, newInfo]);
-            console.log(allData)
+            addData(newInfo);
+            console.log(allData);
+            nextSlide(event)
+
         } else{
             throw new Error('to nie jest funkcja')
         }
-        allData.push(newInfo);
     }
 
     return(
@@ -54,7 +54,7 @@ export default function GiveBackSelectBox4({ addData, allData, prevSlide, nextSl
                             </label>
                             <label>
                                 <p className='adres__text'>Numer telefonu</p>
-                                <input className='adres__input' {...register('city')} />
+                                <input className='adres__input' {...register('phoneNumber')} />
                             </label>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ export default function GiveBackSelectBox4({ addData, allData, prevSlide, nextSl
                         </label>
                     </div>
                     <button onClick={prevSlide} className='wstecz'>Wstecz</button>
-                    <button type='submit' onClick={nextSlide} className='dalej'>Dalej</button>
+                    <button type='submit' className='dalej'>Dalej</button>
                 </form>
             </section>
         </section>
