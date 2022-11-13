@@ -54,8 +54,6 @@ export default function GiveBackSelectBox3({allCity,addCity, addHelp, prevSlide,
                         </button>
                     )))}
                 </div>
-                <p className='giveBackSteps__form__text'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
-                <input className='organizacja__input' type='text'/>
                 <button onClick={prevSlide} className='wstecz'>Wstecz</button>
                 <button onClick={nextSlide} className='dalej'>Dalej</button>
             </form>
