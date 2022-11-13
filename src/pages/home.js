@@ -14,7 +14,7 @@ export default function Home({user, setUser}){
             <HomeLogIn user={user} setUser={setUser}/>
             <HomeHeader user={user} setUser={setUser}/>
             <HomeThreeColumns/>
-            <HomeSimpleSteps/>
+            <HomeSimpleSteps user={user} setUser={setUser}/>
             <HomeAboutUs/>
             <HomeWhoWeHelp/>
             <HomeContactFooter/>
