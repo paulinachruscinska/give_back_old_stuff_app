@@ -4,14 +4,14 @@
   opacity: 1;
 
   .giveBackSelect__box {
-    height: 100vh;
+    //height: 100vh;
 
     .giveBackImportantInformation {
       background-color: $color-yellow;
       box-sizing: border-box;
       text-align: center;
-      padding: 50px 0;
-      height: 179px;
+      padding: 50px 10px;
+      //height: 179px;
       @media(min-width: 800px) {
         text-align: left;
         padding: 50px 140px;
@@ -34,10 +34,13 @@
     .giveBackSteps {
       background: url("../assets/Background-Form.jpg") no-repeat right;
       background-size: cover;
-      padding: 0 142px;
+      padding: 50px 10px;
       position: relative;
       z-index: 1;
-      height: 100%;
+      min-height: 100vh;
+      @media(min-width: 800px){
+        padding: 0 142px;
+      }
 
       .giveBackSteps__step {
         margin: 0;
@@ -55,8 +58,9 @@
       }
 
       .giveBackSteps__form__item {
-        padding-top: 40px;
+        padding: 30px 0;
         display: flex;
+
         align-items: center;
         gap: 30px;
 
@@ -76,12 +80,15 @@
         .adres__text--select {
           display: inline-block;
           width: 300px;
-          margin: 0 0 0 26px;
+          margin: 0;
           padding: 8px 18px;
           font-size: 1.5rem;
           font-weight: 300;
           border: 0.75px solid $color-text-grey;
           position: relative;
+          @media(min-width: 500px){
+            margin: 0 0 0 26px;
+          }
 
           &:after {
             content: '';
@@ -100,6 +107,7 @@
   }
 }
 .checkbox__form {
+  flex-shrink: 0;
   appearance: none;
   width: 40px;
   height: 40px;
@@ -139,9 +147,12 @@
   list-style-type: none;
   padding: 6px 36px;
   position: absolute;
+  top:50px;
   right:0;
-  top: 70px;
   background: url("../assets/Background-Form.jpg") left;
+  @media(min-width: 800px){
+    top:70px;
+  }
   li{
     &:hover{
       cursor: pointer;
@@ -152,6 +163,10 @@
   padding-top: 60px;
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
+  @media (min-width: 500px){
+    flex-direction: row;
+  }
 }
 .giveBackSteps__form__text{
   font-size: 1.5rem;
@@ -162,6 +177,7 @@
   display: flex;
   max-width: 800px;
   flex-wrap: wrap;
+
 }
 .giveBackSteps__form__button{
   margin-right: 1.5rem;
@@ -169,6 +185,7 @@
   padding: 11px 26px;
   border: 0.75px solid $color-text-grey;
   font-family: $font-base;
+  width: 263px;
 }
 .organizacja__input{
   width:500px;
@@ -178,32 +195,51 @@
 }
 .giveBackSteps__form--adres{
   display: flex;
-  gap:160px;
+
+  flex-direction: column;
+  @media(min-width: 1150px){
+    flex-direction: row;
+    gap:160px;
+  }
   label {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap:20px;
+    @media(min-width: 1150px){
+      justify-content: space-between;
+    }
     .adres__text{
       max-width: 115px;
     }
     textarea{
-      width: 256px;
+      width: 200px;
       height: 120px;
       font-size: 1.5rem;
       font-weight: 300;
+      @media(min-width: 1150px){
+        width: 256px;
+      }
     }
   }
 }
 .adres__input{
-  width: 256px;
+  width: 200px;
   height: 40px;
   font-size: 1.5rem;
   font-weight: 300;
+  @media(min-width: 1150px){
+    width: 256px;
+  }
 }
 .adres{
   display: flex;
-  gap:160px;
+  flex-direction: column;
+  @media(min-width: 1150px){
+    flex-direction: row;
+    gap:160px;
+
+  }
   .adres__box{
     display: flex;
     justify-content: space-between;
@@ -227,26 +263,44 @@
   }
 }
 .wstecz{
+  width:100px;
+  box-sizing: border-box;
+  margin: 10px;
   position: absolute;
-  left:142px;
-  bottom: 30px;
+  left:10px;
+  bottom: 5px;
   border: 0.75px solid $color-text-grey;
   font-size: 24px;
   line-height: 32px;
   font-weight: 300;
-  padding: 23px 63px;
+  //padding: 13px 10px;
   font-family: $font-base;
+  @media(min-width: 800px){
+    left:142px;
+    padding: 23px 63px;
+    width: 200px;
+    bottom: 30px;
+  }
 }
 .dalej{
+  width:100px;
+  box-sizing: border-box;
+  margin: 10px;
   position: absolute;
-  left: 360px;
-  bottom: 30px;
+  left: 150px;
+  bottom: 5px;
   border: 0.75px solid $color-text-grey;
   font-size: 24px;
   line-height: 32px;
   font-weight: 300;
-  padding: 23px 63px;
+  //padding: 13px 10px;
   font-family: $font-base;
+  @media(min-width: 800px){
+    left:360px;
+    padding: 23px 63px;
+    width: 200px;
+    bottom: 30px;
+  }
 }
 
 

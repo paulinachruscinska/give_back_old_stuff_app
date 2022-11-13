@@ -1,5 +1,6 @@
 import {HashLink} from "react-router-hash-link";
 import React from "react";
+import {Link} from "react-router-dom";
 
 export default function GiveBackHeader(){
     return(
@@ -11,7 +12,7 @@ export default function GiveBackHeader(){
                     <nav className='homeHeader__nav'>
                         <input type='checkbox' className='hamburger'/>
                         <ul className='homeHeader__nav--ul'>
-                            <li>Start</li>
+                            <li><Link to='/'>Start</Link></li>
                             <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
                             <li><HashLink to='/#homeAboutUs'>O nas</HashLink></li>
                             <li><HashLink to='/#homeWhoWeHelp'>Fundacja i organizacja</HashLink></li>

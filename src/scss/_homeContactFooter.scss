@@ -2,19 +2,20 @@
 .homeContactFooter{
   background: url('../assets/Background-Contact-Form.jpg') no-repeat center;
   background-size: cover;
-  position: relative;
-  &:after{
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    opacity: 0.7;
-  }
+  //position: relative;
+  //&:after{
+  //  content: '';
+  //  position: absolute;
+  //  top:0;
+  //  left:0;
+  //  height: 100%;
+  //  width: 100%;
+  //  background-color: white;
+  //  opacity: 0.7;
+ // }
 }
 .homeContact{
+  height: 100%;
   display: flex;
   justify-content: center;
   @media (min-width: 800px) {

@@ -21,13 +21,13 @@ export default function HomeHeader({user}){
         }
     }
     return (
-        <header className='homeHeader'>
+        <header className='homeHeader' id='homeHeader'>
             <section className='homeHeader__background'></section>
             <section className='homeHeader__info'>
                 <nav className='homeHeader__nav'>
                     <input type='checkbox' className='hamburger'/>
                     <ul className='homeHeader__nav--ul'>
-                        <li><HashLink to='/'>Start</HashLink></li>
+                        <li><HashLink to='/#homeHeader'>Start</HashLink></li>
                         <li><HashLink to='/#homeSimpleSteps'>O co chodzi?</HashLink></li>
                         <li><HashLink to='/#homeAboutUs'>O nas</HashLink></li>
                         <li><HashLink to='/#homeWhoWeHelp'>Fundacja i organizacja</HashLink></li>
