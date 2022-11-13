@@ -8,10 +8,10 @@ import HomeLogIn from "../components/homeLogIn";
 
 
 
-export default function Home({user}){
+export default function Home({user, setUser}){
     return(
         <>
-            <HomeLogIn user={user} />
+            <HomeLogIn user={user} setUser={setUser} />
             <HomeHeader user={user}/>
             <HomeThreeColumns/>
             <HomeSimpleSteps user={user}/>

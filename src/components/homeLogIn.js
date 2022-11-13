@@ -12,7 +12,7 @@ export default function HomeLogIn({user, setUser}){
         onAuthStateChanged(auth, (currentUser) =>{
             setUser(currentUser)
         })
-    }, []);
+    }, [setUser]);
     const logIn = () => {
         if (user == null ){
             return(
