@@ -9,7 +9,7 @@
 
 </div>
 
-## WIĘCEJ NA TEMAT PROJEKTU
+## ABOUT PROJECT
 
 Czesto ludzie mają wiele rzeczy, których już nie używają. 
 <br/>
